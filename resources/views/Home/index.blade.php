@@ -1,27 +1,8 @@
 <x-app-layout title='Home Page'>
   <!-- an extends 
   and section at the same time -->
-@php
-  $color='red';
-  $bgColor='green';
-  @endphp
-  <x-card :$color :$bgColor class='card-rounded' lang='en'>
-    <!-- :color="$color" :bgColor='$bgColor' this one is equevalent to the one on the top a
-        short hand version but need to have the same name var -->
-    <!-- /color="{{ $color }}" bgColor='{{ $bgColor  }}' another way of doing it   -->
-    <x-slot:title>card title </x-slot:title>
-    <p>
-      YEar:{{ $year }}
 
-    </p>
-    <x-slot:footer>card footer</x-slot:footer>
-
-  </x-card>
-
-  <x-test-compent class='card'>
-    inline shit taht i dont now
-  </x-test-compent>
-
+ 
 
   <section class="hero-slider">
     <div class="hero-slides">
@@ -122,10 +103,6 @@
     </section>
   </main>
 
-  <x-slot:footerLinks>
-     <a href="">link 3</a>
-  <a href="">link 4</a>
-  </x-slot:footerLinks>
  
 
 
