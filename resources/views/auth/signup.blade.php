@@ -24,14 +24,16 @@
               <button class="btn btn-primary btn-login w-full">Register</button>
 
               <div class="grid grid-cols-2 gap-1 social-auth-buttons">
-              <x-layouts.fb-button/>
-              <x-layouts.google-button/>
+          
              
               </div>
-              <div class="login-text-dont-have-account">
-                Already have an account? -
-                <a href="/login.html"> Click here to login </a>
-              </div>
+                <x-slot:footerLinks>
+                 Do you  have an account? -
+                <a href="/signup.html"> Click here Login</a>
+          </x-slot:footerLinks>
+             
             </form>
+            
   </x-layouts.guess>
+
 </x-base-layout>

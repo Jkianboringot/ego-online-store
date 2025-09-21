@@ -1,5 +1,6 @@
 <x-base-layout title="Login" bodyClass="page-login">
     <x-layouts.guess title="Login">
+
          <form action="" method="post">
               <div class="form-group">
                 <input type="email" placeholder="Your Email" />
@@ -14,15 +15,11 @@
               </div>
 
               <button class="btn btn-primary btn-login w-full">Login</button>
-
-              <div class="grid grid-cols-2 gap-1 social-auth-buttons">
-                 <x-layouts.fb-button/>
-              <x-layouts.google-button/>
-              </div>
-              <div class="login-text-dont-have-account">
-                Don't have an account? -
+  </form>
+             
+          <x-slot:footerLinks>
+                 Don't have an account? -
                 <a href="/signup.html"> Click here to create one</a>
-              </div>
-            </form>
+          </x-slot:footerLinks>
     </x-layouts.guess>
 </x-base-layout>
