@@ -21,7 +21,9 @@
           </svg>
         </button>
         <div class="navbar-auth">
-          <a href="/add_new.html" class="btn btn-add-new-car">
+          <a href="{{ route('car.create') }}" class="btn btn-add-new-car">
+          <a href="{{ route('signup') }}" class="btn btn-add-new-car">
+          <a href="{{ route('login') }}" class="btn btn-add-new-car">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
