@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->timestamp('published_at')->nullable();
-            $table->timestamp('delete_at');
+            $table->timestamp('deleted_at')->nullable();
             
             $table->timestamps();
         });
@@ -41,3 +41,5 @@ return new class extends Migration
         Schema::dropIfExists('cars');
     }
 };
+
+

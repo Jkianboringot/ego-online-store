@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace {{ namespace }};
 
-use App\Models\Car;
-use Illuminate\Http\Request;
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use {{ namespacedRequests }}
 
-use function Laravel\Prompts\search;
-
-class CarController extends Controller
+class {{ class }} extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('car.index');
+        //
     }
 
     /**
@@ -22,13 +21,13 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('car.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store({{ storeRequest }} $request)
     {
         //
     }
@@ -36,23 +35,23 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Car $car)
+    public function show({{ model }} ${{ modelVariable }})
     {
-        return view('car.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Car $car)
+    public function edit({{ model }} ${{ modelVariable }})
     {
-        return view('car.edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Car $car)
+    public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }})
     {
         //
     }
@@ -60,14 +59,8 @@ class CarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Car $car)
+    public function destroy({{ model }} ${{ modelVariable }})
     {
         //
     }
-    public function search()
-    {
-        return view('car.search');
-    }
-    
 }
-
