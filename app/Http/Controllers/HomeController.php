@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
+
+        // ## ways of creating/inserting data in table[
+
         // $car=Car::get();
 
         // $car_publish=Car::where('published_at','!=',null)->get();
@@ -35,23 +38,23 @@ class HomeController extends Controller
             //     $car->deleted_at=null;
             // $car->save();
 
-            $carData=[ 
-                'year' => 2010,
-                'price' => 45320,
-                'mileage' => 1200,
-                'vin' => 'dfds',
-                'address' => '123 Main Stwrwas',
-                'phone' => '2345y43',
-                'description' => 'Toyota toyp',
-                'maker_id' => 1,
-                'model_id' => 1,
-                'car_type_id' => 1,
-                'fuel_type_id' => 1,
-                'user_id' => 1,
-                'city_id' => 1,
-                'published_at'=>now(),
+            // $carData=[ 
+            //     'year' => 2010,
+            //     'price' => 45320,
+            //     'mileage' => 1200,
+            //     'vin' => 'dfds',
+            //     'address' => '123 Main Stwrwas',
+            //     'phone' => '2345y43',
+            //     'description' => 'Toyota toyp',
+            //     'maker_id' => 1,
+            //     'model_id' => 1,
+            //     'car_type_id' => 1,
+            //     'fuel_type_id' => 1,
+            //     'user_id' => 1,
+            //     'city_id' => 1,
+            //     'published_at'=>now(),
 
-            ];
+            // ];
 
             //approaches for filling data 
             //approach 1
@@ -66,7 +69,80 @@ class HomeController extends Controller
             // $car3=new Car($carData);
             // // short hand version of the car2
 
-        // dd($car);
+        // dd($car);]
+    
+
+        // how to update table data 
+
+        // approache 1
+        // $car=Car::find(1);
+        // $car->price=1000;
+        // $car->save();
+
+        // approache 2 customize
+        // update part
+        // $newprice=Car::where('vin','VIN005')->value('price');
+        // Car::updateOrCreate([
+        //     'vin'=>'VIN006','price'=>15000 //search conditions/condition
+        // ],
+        // ['price'=>$newprice*100]);
+        //create part needs all column to be filled to work , the one on top will thhourgh errer becuase only one column is being filled 
+        // but i must filled all data
+        //   $carData=[ 
+        //         'year' => 2010,  
+        //         'price' => 45320,
+        //         'mileage' => 1200,
+        //         'vin' => 'dfds',
+        //         'address' => '123 Main Stwrwas',
+        //         'phone' => '2345y43',
+        //         'description' => 'Toyota toyp',
+        //         'maker_id' => 1,
+        //         'model_id' => 1,
+        //         'car_type_id' => 1,
+        //         'fuel_type_id' => 1,
+        //         'user_id' => 1,
+        //         'city_id' => 1,
+        //         'published_at'=>now(),
+
+        //     ];
+
+        // Car::updateOrCreate([
+        //     'vin'=>'VIN006','price'=>15000 //search conditions/condition
+        // ],
+        // $carData); //this will not work beucase user_id is not guarded 
+
+        //appraoch 3 #mass update
+        // Car::where('published_at',null)->
+        // where('user_id',2)
+        // ->update(['published_at'=>now()]);
+
+        //DEleting
+
+        //appraoch 1
+        // $car=Car::find(1);
+        // $car->delete();
+
+        //appraoch 2 #mass delete
+        // first way
+//         Car::destroy([2,3]);
+//         // second way
+//         Car::where('published_at','!=',null)->
+//         where('user_id',4)
+//         ->delete();
+//         //third way
+//         Car::truncate(); //this just actuall delete all data , softdelete dont work
+        
+// dd(Car::withTrashed()->get());
+
+
+
+
+
+
+
+        dd(Car::get());
+
+
         return view('Home.index',[
             
         ]);

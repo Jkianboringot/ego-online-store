@@ -30,7 +30,7 @@ class CarSeeder extends Seeder
                 'user_id' => 1,
                 'city_id' => 1,
                 'published_at'=>now(),
-                'deleted_at'=>null,
+               
 
                   'created_at' => now(),
         'updated_at' => now(),
@@ -51,7 +51,7 @@ class CarSeeder extends Seeder
                 'user_id' => 2,
                 'city_id' => 2,
                 'published_at'=>null,
-                'deleted_at'=>null,
+               
 
                   'created_at' => now(),
         'updated_at' => now(),
@@ -72,7 +72,7 @@ class CarSeeder extends Seeder
                 'user_id' => 3,
                 'city_id' => 3,
                    'published_at'=>null,
-                'deleted_at'=>null,
+               
 
                      'created_at' => now(),
         'updated_at' => now(),
@@ -93,7 +93,7 @@ class CarSeeder extends Seeder
                 'user_id' => 4,
                 'city_id' => 4,
                  'published_at'=>now(),
-                'deleted_at'=>null,
+               
 
                    'created_at' => now(),
         'updated_at' => now(),
@@ -114,7 +114,7 @@ class CarSeeder extends Seeder
                 'user_id' => 1,
                 'city_id' => 2,
                 'published_at'=>now(),
-                'deleted_at'=>null,
+               
                   'created_at' => now(),
         'updated_at' => now(),
             ],

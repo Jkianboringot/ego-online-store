@@ -27,7 +27,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->timestamp('published_at')->nullable();
-            $table->timestamp('deleted_at')->nullable();
+                $table->softDeletes(); // adds nullable deleted_at column
+
             
             $table->timestamps();
         });

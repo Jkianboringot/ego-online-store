@@ -8,7 +8,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Car extends Model
 {
-    protected $guarded=['user_id'];
-    use HasFactory,SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
+
+    protected $fillable=[ 
+                'year' ,
+                'price' ,
+                'mileage' ,
+                'vin',
+                'address'  ,
+                'phone' ,
+                'description'  ,
+                'maker_id' ,
+                'model_id' ,
+                'car_type_id' ,
+                'fuel_type_id' ,
+                'user_id' ,
+                'city_id' ,
+                'published_at'
+                ,];
+
 }
 
