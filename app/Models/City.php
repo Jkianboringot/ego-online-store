@@ -10,4 +10,5 @@ class City extends Model
     protected $guarded=[];
     use HasFactory;
     
+    public $timestamps=false;
 }

@@ -13,17 +13,12 @@ class CarImageSeeder extends Seeder
      */
     public function run(): void
     {
-        CarImage::create([
-            ['car_id' => 1, 'image_path' => 'public/img'],
-            ['car_id' => 2, 'image_path' => 'public/img'],
-            ['car_id' => 3, 'image_path' => 'public/img'],
-            ['car_id' => 4, 'image_path' => 'public/img'],
-            ['car_id' => 5, 'image_path' => 'public/img'],
-            ['car_id' => 1, 'image_path' => 'public/img'],
-            ['car_id' => 2, 'image_path' => 'public/img'],
-            ['car_id' => 3, 'image_path' => 'public/img'],
-            ['car_id' => 4, 'image_path' => 'public/img'],
-            ['car_id' => 5, 'image_path' => 'public/img'],
+          CarImage::insert([
+            ['car_id' => 1, 'image_path' => 'public/img/car1.png'],
+            ['car_id' => 2, 'image_path' => 'public/img/car2.png'],
+            ['car_id' => 3, 'image_path' => 'public/img/car3.png'],
+            ['car_id' => 4, 'image_path' => 'public/img/car4.png'],
+            ['car_id' => 5, 'image_path' => 'public/img/car5.png'],
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\FuelType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,9 @@ class FuelTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        FuelType::insert([
+            ['id' => 1, 'name' => 'Gasoline'],
+            ['id' => 2, 'name' => 'Diesel'],
+        ]);
     }
 }

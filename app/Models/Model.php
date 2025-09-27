@@ -9,5 +9,6 @@ class Model extends EloModel
 {
         use HasFactory;
     protected $guarded=[];
+    public $timestamps=false;
 
 }

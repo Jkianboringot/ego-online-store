@@ -10,5 +10,6 @@ class FuelType extends Model
     use HasFactory;
     protected $guarded=[];
         // pretty mush saying guraded nothing or make everything fillable
-
+    public $timestamps=false;
+    
 }

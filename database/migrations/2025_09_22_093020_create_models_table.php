@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('maker_id')->constrained();
             $table->string('name');
 
-            $table->timestamps();
         });
     }
 

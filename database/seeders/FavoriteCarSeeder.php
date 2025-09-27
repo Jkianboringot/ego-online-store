@@ -13,15 +13,12 @@ class FavoriteCarSeeder extends Seeder
      */
     public function run(): void
     {
-         FavoriteCar::create([['car_id'=>1,'user_id'=>1],
-    ['car_id'=>2,'user_id'=>1],
-['car_id'=>3,'user_id'=>1],
-['car_id'=>4,'user_id'=>2],
-['car_id'=>5,'user_id'=>2],
-['car_id'=>1,'user_id'=>2],
-['car_id'=>2,'user_id'=>3],
-['car_id'=>3,'user_id'=>3],
-['car_id'=>4,'user_id'=>3],
-['car_id'=>5,'user_id'=>4],]);
+        FavoriteCar::insert([
+            ['car_id' => 1, 'user_id' => 1],
+            ['car_id' => 2, 'user_id' => 1],
+            ['car_id' => 3, 'user_id' => 2],
+            ['car_id' => 4, 'user_id' => 3],
+            ['car_id' => 5, 'user_id' => 4],
+        ]);
     }
 }

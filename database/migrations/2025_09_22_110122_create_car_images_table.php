@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('car_id')->constrained();
             $table->string('image_path');
             //i dont have to do this in ims since i only want to show one image not alot so its fine
-            $table->timestamps();
         });
     }
 
