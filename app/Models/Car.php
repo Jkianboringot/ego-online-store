@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Car extends Model
 {
-    protected $guarded=[];
+    protected $guarded=['user_id'];
     use HasFactory,SoftDeletes;
 }
+

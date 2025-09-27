@@ -29,6 +29,11 @@ class CarSeeder extends Seeder
                 'fuel_type_id' => 1,
                 'user_id' => 1,
                 'city_id' => 1,
+                'published_at'=>now(),
+                'deleted_at'=>null,
+
+                  'created_at' => now(),
+        'updated_at' => now(),
             ],
             [
                 'id' => 2,
@@ -45,6 +50,11 @@ class CarSeeder extends Seeder
                 'fuel_type_id' => 2,
                 'user_id' => 2,
                 'city_id' => 2,
+                'published_at'=>null,
+                'deleted_at'=>null,
+
+                  'created_at' => now(),
+        'updated_at' => now(),
             ],
             [
                 'id' => 3,
@@ -61,6 +71,11 @@ class CarSeeder extends Seeder
                 'fuel_type_id' => 1,
                 'user_id' => 3,
                 'city_id' => 3,
+                   'published_at'=>null,
+                'deleted_at'=>null,
+
+                     'created_at' => now(),
+        'updated_at' => now(),
             ],
             [
                 'id' => 4,
@@ -77,6 +92,11 @@ class CarSeeder extends Seeder
                 'fuel_type_id' => 2,
                 'user_id' => 4,
                 'city_id' => 4,
+                 'published_at'=>now(),
+                'deleted_at'=>null,
+
+                   'created_at' => now(),
+        'updated_at' => now(),
             ],
             [
                 'id' => 5,
@@ -93,6 +113,10 @@ class CarSeeder extends Seeder
                 'fuel_type_id' => 1,
                 'user_id' => 1,
                 'city_id' => 2,
+                'published_at'=>now(),
+                'deleted_at'=>null,
+                  'created_at' => now(),
+        'updated_at' => now(),
             ],
         ]);
     }

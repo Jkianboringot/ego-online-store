@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('car_id')->constrained();
             $table->string('image_path');
+            $table->integer('position');
             //i dont have to do this in ims since i only want to show one image not alot so its fine
         });
     }

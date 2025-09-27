@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class FuelType extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $fillable=['name'];
         // pretty mush saying guraded nothing or make everything fillable
     public $timestamps=false;
     

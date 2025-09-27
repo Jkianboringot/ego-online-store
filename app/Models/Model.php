@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model as EloModel;
 class Model extends EloModel
 {
         use HasFactory;
-    protected $guarded=[];
+    protected $fillable=['name','maker_id'];
     public $timestamps=false;
 
 }

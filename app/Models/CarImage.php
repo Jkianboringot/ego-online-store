@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class CarImage extends Model
-{    protected $guarded=[];
+{    protected $fillable=['image_path','position'];
     public $timestamps=false;
  
     use HasFactory;

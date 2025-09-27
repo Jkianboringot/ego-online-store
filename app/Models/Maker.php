@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maker extends Model
 {
-    protected $guarded=[];
+    protected $fillable=['name'];
     use HasFactory;
     public $timestamps=false;
     

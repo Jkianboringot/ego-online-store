@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class CarType extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $fillable=['name'];
 
     public $timestamps=false;
 

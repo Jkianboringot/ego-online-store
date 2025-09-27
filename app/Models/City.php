@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-    protected $guarded=[];
+    protected $fillable=['state_id','name'];
     use HasFactory;
     
     public $timestamps=false;
