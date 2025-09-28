@@ -11,4 +11,13 @@ class City extends Model
     use HasFactory;
     
     public $timestamps=false;
+public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
 }

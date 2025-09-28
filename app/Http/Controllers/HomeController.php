@@ -8,6 +8,7 @@ use App\Models\CarImage;
 use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -172,7 +173,8 @@ class HomeController extends Controller
 
 // dd($car->features,$car->primaryImage);
 
-//car relation for hasone relationship
+//❌car relation for hasone relationship
+
 //this will give Duplicate entry for primary key because car can have only one carfeature , or a one to one relationship
 //if this was hasmany this error will not happen like the one below where you can stuck as many image to one car
 // $car=Car::find(2);
@@ -194,7 +196,7 @@ class HomeController extends Controller
 // dd($car->features);
 
 
-// //how to create has many relationship 
+// //❌ hasmany relationship 
 // $car=Car::find(1);
 // // $image= new CarImage(['image_path'=>'somthing','position'=>2]);
 // // $car->images()->save($image);
@@ -214,7 +216,8 @@ class HomeController extends Controller
 // $car=Car::find(1);
 // dd($car->carType);
 
-// Many to one relationship
+// ❌Many to one relationship
+
 // $carType=CarType::where('name','Sedan')->first();
 // $car=Car::whereBelongsTo($carType)->get();//select all the cars that belongs or has a relationship to sedan
 // // this $carType->cars and the one above whereBelongsto are actaully the same 
@@ -231,6 +234,21 @@ class HomeController extends Controller
 // $car->save();
 // dd($carType->cars);
 
+//❌Many to MAny
+
+// $car=Car::find(1);
+// dd($car->userFavorites);
+
+// $user=User::find(1);
+// dd($user->favoriteCars);
+
+//how to add new record in pivot table in many to many
+$user=User::find(1);
+// $user->favoriteCars()->attach([3,4]); //this is for adding 
+// $user->favoriteCars()->sync([5]);
+$user->favoriteCars()->detach([3,4]); //this is for deleting 
+
+dd($user->favoriteCars);
 
 
         return view('Home.index',[

@@ -11,4 +11,15 @@ class Model extends EloModel
     protected $fillable=['name','maker_id'];
     public $timestamps=false;
 
+    public function maker()
+    {
+        return $this->belongsTo(related: Maker::class);
+    }
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+
+   
+
 }

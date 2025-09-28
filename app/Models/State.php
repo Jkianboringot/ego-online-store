@@ -11,4 +11,13 @@ class State extends Model
     protected $fillabe=['name'];
 
     public $timestamps=false;
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
+     public function cities()
+    {
+        return $this->hasMany(City::class);
+    }
 }

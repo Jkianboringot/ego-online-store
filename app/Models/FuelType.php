@@ -11,5 +11,10 @@ class FuelType extends Model
     protected $fillable=['name'];
         // pretty mush saying guraded nothing or make everything fillable
     public $timestamps=false;
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
     
 }

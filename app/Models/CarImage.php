@@ -10,4 +10,8 @@ class CarImage extends Model
     public $timestamps=false;
  
     use HasFactory;
+
+      public function car(){
+        $this->belongsTo(Car::class);
+    }
 }

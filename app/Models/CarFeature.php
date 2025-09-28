@@ -25,4 +25,8 @@ class CarFeature extends Model
     
     public $timestamps=false;
     
+
+    public function car(){
+        $this->belongsTo(Car::class);
+    }
 }
