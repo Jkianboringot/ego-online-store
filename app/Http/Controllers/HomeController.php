@@ -8,7 +8,9 @@ use App\Models\CarImage;
 use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
+use App\Models\Model;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -243,16 +245,61 @@ class HomeController extends Controller
 // dd($user->favoriteCars);
 
 //how to add new record in pivot table in many to many
-$user=User::find(1);
-// $user->favoriteCars()->attach([3,4]); //this is for adding 
-// $user->favoriteCars()->sync([5]);
-$user->favoriteCars()->detach([3,4]); //this is for deleting 
+// $user=User::find(1);
+// // $user->favoriteCars()->attach([3,4]); //this is for adding 
+// // $user->favoriteCars()->sync([5]);
+// $user->favoriteCars()->detach([3,4]); //this is for deleting 
 
-dd($user->favoriteCars);
+// dd($user->favoriteCars);
 
 
-        return view('Home.index',[
-            
+//❌Factories
+// $maker =Maker::factory()->count(10)->create();
+// dd($maker);
+
+
+// $user=User::factory()->count(10)->make(['name'=>'kian']);
+// $state=User::factory()->count(10)->state(['name'=>'state'])->make();
+//this two are pretty much the same as it does the samething
+
+//❌Sequence - alternate on what to input 
+// $users=User::factory()->count(10)
+// // ->sequence(['name'=>'kian'],
+// //  ['name'=>'james'],
+// // ['name'=>'john'])
+// ->sequence(fn(Sequence $sequence)=>['name'=>'Name'. 1+$sequence->index ])
+// ->make();
+
+// $user=User::factory()->count(10)->make(['name'=>'kian']);
+
+
+
+//❌Factory with one to many relationship
+ // hasModels(5) means: for each Maker, also create 5 CarModel instances.
+        // If you had hasCars(5), it would look for CarFactory.
+
+// $vars=Maker::factory()->count(1)->hasModels(1)
+// ->hasModels(1,function(array $attributes,Maker $maker){
+//     foreach($maker as $name){
+//         $names=(string)['name'=>$name->name];
+//     return 'From'.$names;
+// }                            this good if you want a customize name for relationship
+// })                                               that is about ot be created
+//❌ a general way of doing it like oyu can free change the model use to have one factory to create all
+//like you can just make the mmodel on changeble do i does the same as hasModels()->name of method on maker model
+
+// ->has(Model::factory()->count(4),'models') //this is the same as->hasModels(1)
+// ->create();
+       
+// $makers=Maker::get();
+// $models=Model::get();
+
+//❌ Factory belongsTo relationship
+
+        return view('Home.test',[
+            'vars'=>$vars,
+            'makers'=>$makers,
+            'models'=>$models,
         ]);
     }
 }

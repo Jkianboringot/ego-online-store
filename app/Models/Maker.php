@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Model as models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +17,7 @@ class Maker extends Model
 
     public function models()
     {
-        return $this->hasMany(Model::class);
+        return $this->hasMany(models::class);
     }
     
 }
