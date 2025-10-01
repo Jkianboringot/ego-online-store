@@ -7,7 +7,7 @@
     <p>{{$maker}}</p>
     @endforeach
 <br>
-
+    
     @foreach ($models as $model )
     <p>{{$model}}</p>
     @endforeach
