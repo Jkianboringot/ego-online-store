@@ -10,6 +10,7 @@ use App\Models\FuelType;
 use App\Models\Maker;
 use App\Models\Model;
 use App\Models\User;
+use App\Models\FavoriteCar;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Http\Request;
 
@@ -292,25 +293,46 @@ class HomeController extends Controller
         // ->has(Model::factory()->count(4),'models') //this is the same as->hasModels(1)
         // ->create();
 
-        $makers=Maker::get();
-        $models=Model::get();
+        // $makers=Maker::get();
+        // $models=Model::get();
 
         //❌ Factory belongsTo relationship
-//  $vars=Model::factory()->count(5)
-// //  ->forMaker()
-// // ->for(Maker::factory()->state(['name'=>'batman']),'maker')
-// // a general way of doing it like oyu can free change the model use to have one factory to create all
-// //         //like you can just make the mmodel on changeble do i does the same as hasModels()->name of method on maker model
-//  ->create();
+        //  $vars=Model::factory()->count(5)
+        // //  ->forMaker()
+        // // ->for(Maker::factory()->state(['name'=>'batman']),'maker')
+        // // a general way of doing it like oyu can free change the model use to have one factory to create all
+        // //         //like you can just make the mmodel on changeble do i does the same as hasModels()->name of method on maker model
+        //  ->create();
 
-// ❌you can also create it with a variable
-$maker=Maker::factory()->state(['name'=>'batman'])->create();
- $vars=Model::factory()->count(5)->for($maker)->create();
+        // ❌you can also create it with a variable
+        // $maker=Maker::factory()->state(['name'=>'batman'])->create();
+        //  $vars=Model::factory()->count(5)->for($maker)->create();
+
+
+        // ❌many to many relationships in factory
+
+
+        $vars = User::factory()
+        ->has(Car::factory()->count(5), 'favoriteCars')
+        // ->hasAttached(Car::factory()->count(5), 'favoriteCars')
+        ->create();
+
+
+
+        $cars = Car::get();
+        $favorites = FavoriteCar::get();
+        $users= User::get();
+
+
+
+
+
 
         return view('Home.test', [
-            'vars'=>$vars,
-            'makers'=>$makers,
-            'models'=>$models,
+            'vars' => $vars,
+            'cars'=>$cars,
+            'favorites'=>$favorites,
+            'users'=>$users,
         ]);
     }
 }

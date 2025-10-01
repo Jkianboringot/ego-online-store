@@ -3,12 +3,18 @@
     <p>{{$var}}</p>
     @endforeach
 <br>
-    @foreach ($makers as $maker )
-    <p>{{$maker}}</p>
+    @foreach ($cars as $car )
+    <p>{{$car}}</p>
     @endforeach
 <br>
-    
-    @foreach ($models as $model )
-    <p>{{$model}}</p>
+
+    @foreach ($favorites as $favorite )
+    <p>{{$favorite}}</p>
+    @endforeach
+
+    <br>
+
+    @foreach ($users as $user )
+    <p>{{$user}}</p>
     @endforeach
 </div>

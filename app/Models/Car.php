@@ -11,6 +11,10 @@ class Car extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $casts = [
+    'published_at' => 'datetime',
+];
+
     protected $fillable = [
         'year',
         'price',
