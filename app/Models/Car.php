@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Models\Model as models;
 class Car extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $casts = [
-    'published_at' => 'datetime',
-];
+        'published_at' => 'datetime',
+    ];
 
     protected $fillable = [
         'year',
@@ -39,36 +40,40 @@ class Car extends Model
     public function primaryImage()
     {
         return $this->hasOne(CarImage::class)->oldestOfMany();
-    }public function images()
+    }
+    public function images()
     {
         return $this->hasMany(CarImage::class);
     }
-    
+
     public function carType()
     {
         return $this->belongsTo(CarType::class);
     }
 
-      public function makers()
+    public function maker()
     {
         return $this->belongsTo(Maker::class);
-    }  public function models()
+    }
+    public function model()
     {
-        return $this->belongsTo(Model::class);
-    }  public function fuelType()
+        return $this->belongsTo(models::class);
+    }
+    public function fuelType()
     {
         return $this->belongsTo(FuelType::class);
-    }  public function users()
+    }
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
-      public function city()
+    public function city()
     {
         return $this->belongsTo(City::class);
     }
 
-     public function userFavorites()
+    public function userFavorites()
     { //for many to many relation
-    return $this->belongsToMany(User::class,'favorite_cars');
+        return $this->belongsToMany(User::class, 'favorite_cars');
     }
 }

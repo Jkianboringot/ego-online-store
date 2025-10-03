@@ -13,6 +13,10 @@ class CarFeatureSeeder extends Seeder
      */
     public function run(): void
     {
+            // CarFeature::factory()->count(10)->create();
+         // this is the proper way of using seeder, using a factory instead doing it manaully
+        // the only down side is that its complex and need to account for Relationship
+        // but its faster and better than manual
        CarFeature::insert([
             [
                 'car_id' => 1,

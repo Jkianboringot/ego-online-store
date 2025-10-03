@@ -312,27 +312,24 @@ class HomeController extends Controller
         // ❌many to many relationships in factory
 
 
-        $vars = User::factory()
-        ->has(Car::factory()->count(5), 'favoriteCars')
-        // ->hasAttached(Car::factory()->count(5), 'favoriteCars')
-        ->create();
+        // $vars = User::factory()
+        // ->has(Car::factory()->count(5), 'favoriteCars')
+        // // ->hasAttached(Car::factory()->count(5), 'favoriteCars')
+        // ->create();
 
 
 
-        $cars = Car::get();
-        $favorites = FavoriteCar::get();
-        $users= User::get();
-
-
+        // $cars = Car::get();
+        // $favorites = FavoriteCar::get();
+        // $users= User::get();
 
 
 
 
-        return view('Home.test', [
-            'vars' => $vars,
-            'cars'=>$cars,
-            'favorites'=>$favorites,
-            'users'=>$users,
+        $cars = Car::where('published_at', '<', now())
+        ->orderBy('published_at', 'desc')->limit(30)->get();
+        return view('home.index', [
+            'cars' => $cars
         ]);
     }
 }

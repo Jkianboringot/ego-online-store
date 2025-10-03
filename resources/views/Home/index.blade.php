@@ -2,7 +2,7 @@
   <!-- an extends 
   and section at the same time -->
 
- 
+
 
   <section class="hero-slider">
     <div class="hero-slides">
@@ -93,17 +93,17 @@
       <div class="container">
         <h2>Latest Added Cars</h2>
         <div class="car-items-listing">
-         @for($i=0; $i<15; $i++)
-        <x-car-item/>
-<!-- this is fuckng usefull  -->
-         @endfor
          
+
+          @foreach($cars as $car)
+          <x-car-item :car='$car' />
+          @endforeach
         </div>
       </div>
     </section>
   </main>
 
- 
+
 
 
 </x-app-layout>
