@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\User;
 use Illuminate\Http\Request;
+use PDO;
 
 use function Laravel\Prompts\search;
 
@@ -15,7 +16,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars=User::find(4)->cars()->orderBy('created_at','desc')->get();
+        $cars=User::find(1)->cars()->orderBy('created_at','desc')->get();
         return view('car.index',['cars'=>$cars]);
     }
 
@@ -74,6 +75,14 @@ class CarController extends Controller
         $cars=$query->limit(30)->get();
         return view('car.search',['carCount'=>$carCount,'cars'=>$cars]);
     }
+
     
+public function watchlist(){
+    $cars=User::find(1 )->favoriteCars;
+    return view('car.watchlist',['cars'=>$cars]);
 }
+
+}
+
+
 
