@@ -7,7 +7,7 @@
         <h2>My Favourite Cars</h2>
         <div class="car-items-listing">
         @forelse($cars as $car)
-        <x-car-item :$car :favoured="true"/>
+        <x-car-item :$car :favoured="true "/>
       
         @empty
       

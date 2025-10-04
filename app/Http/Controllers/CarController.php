@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\FavoriteCar;
 use App\Models\User;
 use Illuminate\Http\Request;
 use PDO;
@@ -16,8 +17,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars=User::find(1)->cars()->orderBy('created_at','desc')->get();
-        return view('car.index',['cars'=>$cars]);
+        $cars = User::with(['maker','model','primaryImage'])->find(1)->cars()->orderBy('created_at', 'desc')->get();
+        return view('car.index', ['cars' => $cars]);
     }
 
     /**
@@ -41,7 +42,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        return view('car.show',['car'=>$car]);
+        return view('car.show', ['car' => $car]);
     }
 
     /**
@@ -69,20 +70,26 @@ class CarController extends Controller
     }
     public function search()
     {
-        $query=Car::where('published_at','<',now())->orderBy('published_at','desc');
+        $query = Car::with(['city', 'maker', 'model',
+                     'carType', 'fuelType', 'primaryImage'])->where('published_at', '<', now())->orderBy('published_at', 'desc');
 
-        $carCount=$query->count();
-        $cars=$query->limit(30)->get();
-        return view('car.search',['carCount'=>$carCount,'cars'=>$cars]);
+        $carCount = $query->count();
+        $cars = $query->limit(30)->get();
+        return view('car.search', ['carCount' => $carCount, 'cars' => $cars]);
     }
 
-    
-public function watchlist(){
-    $cars=User::find(1 )->favoriteCars;
-    return view('car.watchlist',['cars'=>$cars]);
+
+    public function watchlist()
+    {
+
+        $cars = User::find(1)->favoriteCars()->with([
+            'city',
+            'maker',
+            'model',
+            'carType',
+            'fuelType',
+            'primaryImage'
+        ]);
+        return view('car.watchlist', ['cars' => $cars]);
+    }
 }
-
-}
-
-
-

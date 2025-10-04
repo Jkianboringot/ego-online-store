@@ -1,6 +1,4 @@
 @props(['car','favoured'=>false])
-
-
 <div class="car-item card">
   <a href="{{route('car.show',$car)}}">
     <img

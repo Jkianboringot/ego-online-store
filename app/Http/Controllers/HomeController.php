@@ -326,8 +326,10 @@ class HomeController extends Controller
 
 
 
-        $cars = Car::where('published_at', '<', now())
-        ->orderBy('published_at', 'desc')->limit(30)->get();
+        $cars = Car::with(['city', 'maker', 'model',
+                     'carType', 'fuelType', 'primaryImage'])
+            ->where('published_at', '<', now())
+            ->orderBy('published_at', 'desc')->limit(30)->get();
         return view('home.index', [
             'cars' => $cars
         ]);
