@@ -17,7 +17,14 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = User::with(['maker', 'model', 'primaryImage'])->find(1)->cars()->orderBy('created_at', 'desc')->get();
+        $cars = User::find(2)->cars()->with(['maker', 'model', 'primaryImage'])
+            //so the placement of iwth does matter , it was on user and user has no 
+            // relation to this cars do thats why it give me undifined
+            ->orderBy('created_at', 'desc')->paginate(5);
+        // ->withPath()
+        // ->appends(['sort=>'price']) 
+        // ->withQueryString(['sort=>'price']) 
+        // ->fragment('cars') 
         return view('car.index', ['cars' => $cars]);
     }
 
@@ -78,21 +85,21 @@ class CarController extends Controller
             'fuelType',
             'primaryImage'
         ])
-        // ->where('published_at', '<', now())
-        ->orderBy('published_at', 'desc');
+            // ->where('published_at', '<', now())
+            ->orderBy('published_at', 'desc');
 
-        $query->join('cities', 'cities.id', '=', 'cars.city_id')
-            ->join('car_types','car_types.id','=','cars.car_type_id')
+        // $query->join('cities', 'cities.id', '=', 'cars.city_id')
+        //     ->join('car_types','car_types.id','=','cars.car_type_id')
 
-        ->where('cities.state_id',1)->
-        where('car_type.name','Sedan');
+        // ->where('cities.state_id',1)->
+        // where('car_type.name','Sedan');
 
-        $query->select('cars.*','cities.name as city_name'); //manual way you dont have to use eager loading can be good if eager loading is shit (loading every column and you only need one)
+        // $query->select('cars.*','cities.name as city_name'); //manual way you dont have to use eager loading can be good if eager loading is shit (loading every column and you only need one)
 
-        $carCount = $query->count();
-        $cars = $query->limit(30)->get();
 
-        return view('car.search', ['carCount' => $carCount, 'cars' => $cars]);
+        $cars = $query->paginate(10);
+
+        return view('car.search', ['cars' => $cars]);
     }
 
 
@@ -106,13 +113,7 @@ class CarController extends Controller
             'carType',
             'fuelType',
             'primaryImage'
-        ]);
+        ])->paginate(10);
         return view('car.watchlist', ['cars' => $cars]);
     }
 }
-
-
-
-
-
-

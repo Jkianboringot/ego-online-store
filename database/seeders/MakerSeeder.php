@@ -14,8 +14,18 @@ class MakerSeeder extends Seeder
     public function run(): void
     {
        Maker::insert([
-            ['id' => 1, 'name' => 'Toyota'],
+           ['id' => 1, 'name' => 'Toyota'],
             ['id' => 2, 'name' => 'Honda'],
+            ['id' => 3, 'name' => 'Nissan'],
+            ['id' => 4, 'name' => 'Mazda'],
+            ['id' => 5, 'name' => 'Hyundai'],
+            ['id' => 6, 'name' => 'Ford'],
+            ['id' => 7, 'name' => 'Chevrolet'],
+            ['id' => 8, 'name' => 'Volkswagen'],
+            ['id' => 9, 'name' => 'Tesla'],
+            ['id' => 10, 'name' => 'BMW'],
+            ['id' => 11, 'name' => 'Audi'],
+            ['id' => 12, 'name' => 'Mercedes-Benz'],
         ]);
     }
 }

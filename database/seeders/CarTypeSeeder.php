@@ -14,8 +14,10 @@ class CarTypeSeeder extends Seeder
     public function run(): void
     {
       CarType::insert([
-            ['id' => 1, 'name' => 'Sedan'],
-            ['id' => 2, 'name' => 'SUV'],
+              ['id' => 1, 'name' => 'Sedan'],
+            ['id' => 2, 'name' => 'Hatchback'],
+            ['id' => 3, 'name' => 'SUV'],
+            ['id' => 4, 'name' => 'Electric'],
         ]);
     }
 }

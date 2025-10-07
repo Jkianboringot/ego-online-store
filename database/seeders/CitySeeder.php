@@ -14,10 +14,11 @@ class CitySeeder extends Seeder
     public function run(): void
     {
          City::insert([
-            ['id' => 1, 'state_id' => 1, 'name' => 'Los Angeles'],
-            ['id' => 2, 'state_id' => 1, 'name' => 'San Francisco'],
-            ['id' => 3, 'state_id' => 2, 'name' => 'Houston'],
-            ['id' => 4, 'state_id' => 2, 'name' => 'Dallas'],
+             ['id' => 1, 'state_id' => 1, 'name' => 'Manila'],
+            ['id' => 2, 'state_id' => 1, 'name' => 'Baguio'],
+            ['id' => 3, 'state_id' => 2, 'name' => 'Cebu'],
+            ['id' => 4, 'state_id' => 3, 'name' => 'Davao'],
+            ['id' => 5, 'state_id' => 3, 'name' => 'Cagayan de Oro'],
         ]);
     }
 }
