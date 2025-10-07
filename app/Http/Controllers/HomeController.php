@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\FavoriteCar;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Http\Request;
+use Illuminate\Testing\Fluent\Concerns\Debugging;
 
 class HomeController extends Controller
 {
@@ -329,7 +330,13 @@ class HomeController extends Controller
         $cars = Car::with(['city', 'maker', 'model',
                      'carType', 'fuelType', 'primaryImage'])
             ->where('published_at', '<', now())
-            ->orderBy('published_at', 'desc')->limit(30)->get();
+            ->orderBy('published_at', 'desc')->limit(30)->get()
+;
+                // this can be use for Debugging but sql does not work for some reason
+            // ->ddRawSql()
+            // ->dd()
+            // ->toSql()
+            // ->dump()
         return view('home.index', [
             'cars' => $cars
         ]);

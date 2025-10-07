@@ -17,7 +17,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = User::with(['maker','model','primaryImage'])->find(1)->cars()->orderBy('created_at', 'desc')->get();
+        $cars = User::with(['maker', 'model', 'primaryImage'])->find(1)->cars()->orderBy('created_at', 'desc')->get();
         return view('car.index', ['cars' => $cars]);
     }
 
@@ -70,11 +70,28 @@ class CarController extends Controller
     }
     public function search()
     {
-        $query = Car::with(['city', 'maker', 'model',
-                     'carType', 'fuelType', 'primaryImage'])->where('published_at', '<', now())->orderBy('published_at', 'desc');
+        $query = Car::select('cars.*')->with([
+            'city',
+            'maker',
+            'model',
+            'carType',
+            'fuelType',
+            'primaryImage'
+        ])
+        // ->where('published_at', '<', now())
+        ->orderBy('published_at', 'desc');
+
+        $query->join('cities', 'cities.id', '=', 'cars.city_id')
+            ->join('car_types','car_types.id','=','cars.car_type_id')
+
+        ->where('cities.state_id',1)->
+        where('car_type.name','Sedan');
+
+        $query->select('cars.*','cities.name as city_name'); //manual way you dont have to use eager loading can be good if eager loading is shit (loading every column and you only need one)
 
         $carCount = $query->count();
         $cars = $query->limit(30)->get();
+
         return view('car.search', ['carCount' => $carCount, 'cars' => $cars]);
     }
 
@@ -93,3 +110,9 @@ class CarController extends Controller
         return view('car.watchlist', ['cars' => $cars]);
     }
 }
+
+
+
+
+
+
