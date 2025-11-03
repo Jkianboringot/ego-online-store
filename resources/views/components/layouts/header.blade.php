@@ -22,8 +22,6 @@
         </button>
         <div class="navbar-auth">
           <a href="{{ route('car.create') }}" class="btn btn-add-new-car">
-          <a href="{{ route('signup') }}" class="btn btn-add-new-car">
-          <a href="{{ route('login') }}" class="btn btn-add-new-car">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,7 +71,7 @@
               </li>
             </ul>
           </div>
-          <a href="/signup.html" class="btn btn-primary btn-signup">
+          <a href="{{ route('register') }}" class="btn btn-primary btn-signup">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -91,7 +89,8 @@
 
             Signup
           </a>
-          <a href="/login.html" class="btn btn-login flex items-center">
+
+          <a href="{{ route('login') }}" class="btn btn-login flex items-center">
             <svg
               style="width: 18px; fill: currentColor; margin-right: 4px"
               viewBox="0 0 1024 1024"
