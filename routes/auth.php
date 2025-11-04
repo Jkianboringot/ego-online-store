@@ -9,11 +9,19 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
+
+        
+Route::get(
+    'index',
+    [HomeController::class, 'index']
+)->name('index'); //->middleware('auth')
+    //find ohter way to access this through web not auth
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
@@ -56,4 +64,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+    //       Route::post('logout',function  (){
+    //     AuthenticatedSessionController::destroy();
+    //       session()->flash('success', 'You have been logged out successfully!');
+    //     return redirect()->route('/');
+    // } )
+    //     ->name('logout');
+        
 });

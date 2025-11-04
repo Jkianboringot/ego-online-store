@@ -28,7 +28,11 @@
       rel="stylesheet"
     /> -->
 
-    <link rel="stylesheet" href="/css/app.css" />
+    <!-- <link rel="stylesheet" href="/css/app.css" /> this was teh original i just 
+     change it beucase logout flass is not working correctly but if ui is broken bring this
+     back-->
+    <link href="/css/app.css" rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="css/output.css" /> -->
   </head>
   <body @if($bodyClass)class="{{ $bodyClass }}"@endif>
