@@ -34,6 +34,8 @@
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="css/output.css" /> -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
   </head>
   <body @if($bodyClass)class="{{ $bodyClass }}"@endif>
     
