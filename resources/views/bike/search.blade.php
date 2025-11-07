@@ -22,9 +22,9 @@
             <option value="-price">Price Desc</option>
           </select>
         </div>
-        <div class="search-bike-results-wrapper">
-          <div class="search-bikes-sidebar">
-            <div class="biked biked-found-bikes">
+        <div class="search-car-results-wrapper">
+          <div class="search-cars-sidebar">
+            <div class="card card-found-cars">
               <p class="m-0">Found <strong>{{ $bikes->total() }}</strong> bikes</p>
 
               <button class="close-filters-button">
@@ -37,9 +37,9 @@
             </div>
 
             <!-- Find a bike form -->
-            <section class="find-a-bike">
-              <form action="/s.html" method="GET" class="find-a-bike-form biked flex p-medium">
-                <div class="find-a-bike-inputs">
+            <section class="find-a-car">
+              <form action="/s.html" method="GET" class="find-a-car-form card flex p-medium">
+                <div class="find-a-car-inputs">
                   <div class="form-group">
                     <label class="mb-medium">Maker</label>
                     <select id="makerSelect" name="maker_id">
@@ -284,10 +284,10 @@
                   </div>
                 </div>
                 <div class="flex">
-                  <button type="button" class="btn btn-find-a-bike-reset">
+                  <button type="button" class="btn btn-find-a-car-reset">
                     Reset
                   </button>
-                  <button class="btn btn-primary btn-find-a-bike-submit">
+                  <button class="btn btn-primary btn-find-a-car-submit">
                     Search
                   </button>
                 </div>
@@ -296,8 +296,8 @@
             <!--/ Find a bike form -->
           </div>
 
-          <div class="search-bikes-results">
-            <div class="bike-items-listing">
+          <div class="search-cars-results">
+            <div class="car-items-listing">
 
 
 @foreach ($bikes as $bike )

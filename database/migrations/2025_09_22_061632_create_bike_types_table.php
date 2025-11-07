@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bike_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('types',['Manual','Semi Manual','Auto Matic']);
+            $table->enum('type',['Electric','Sport Bike','Scooter']);
         });
     }
 

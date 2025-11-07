@@ -37,6 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
+Route::get('/bike/search',[BikeController::class,'search'])->name('bike.search');
+Route::get('/bike/watchlist',[BikeController::class,'watchlist'])->name('bike.watchlist');
+
 Route::resource('bike', BikeController::class);
 
 
@@ -45,9 +50,6 @@ require __DIR__ . '/auth.php';
 
     // Route::get('/', [HomeController::class,'index']
     // )->name('index');//->middleware('auth')
-
-    // Route::get('/bike/search',[BikeController::class,'search'])->name('bike.search');
-    // Route::get('/bike/watchlist',[BikeController::class,'watchlist'])->name('bike.watchlist');
 
     // Route::resource('bike',BikeController::class);
 

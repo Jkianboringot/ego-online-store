@@ -14,10 +14,10 @@ class BikeTypeSeeder extends Seeder
     public function run(): void
     {
       BikeType::insert([
-              ['id' => 1, 'name' => 'Sedan'],
-            ['id' => 2, 'name' => 'Hatchback'],
-            ['id' => 3, 'name' => 'SUV'],
-            ['id' => 4, 'name' => 'Electric'],
+              ['id' => 1, 'type' => 'Electric'],
+            ['id' => 2, 'type' => 'Sport Bike'],
+            ['id' => 3, 'type' => 'Scooter'],
+            ['id' => 4, 'type' => 'Electric'],
         ]);
     }
 }

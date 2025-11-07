@@ -1,8 +1,8 @@
-@props(['car','favoured'=>false])
+@props(['bike','favoured'=>false])
 <div class="car-item card">
-  <a href="{{route('car.show',$car)}}">
+  <a href="{{route('bike.show',$bike)}}">
     <img
-      src="{{ $car->primaryImage->image_path }}"
+      src="{{ $bike->primaryImage->image_path }}"
       alt=""
       class="car-item-img rounded-t" />
   </a>
@@ -38,14 +38,14 @@
 
       </button>
     </div>
-    <h2 class="car-item-title">{{ $car->year }} - {{ $car->maker->name }}
-      {{ $car->model->name }}
+    <h2 class="car-item-title">{{ $bike->year }} - {{ $bike->maker->name }}
+      {{ $bike->model->name }}
     </h2>
-    <p class="car-item-price">{{ $car->price }}</p>
+    <p class="car-item-price">{{ $bike->price }}</p>
     <hr />
     <p class="m-0">
-      <span class="car-item-badge">{{ $car->carType->name }}</span>
-      <span class="car-item-badge">{{ $car->fuelType->name }}</span>
+      <span class="car-item-badge">{{ $bike->bikeType->name }}</span>
+      <span class="car-item-badge">{{ $bike->fuelType->name }}</span>
     </p>
   </div>
 </div>

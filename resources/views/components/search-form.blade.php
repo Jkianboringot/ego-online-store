@@ -1,7 +1,7 @@
  <section class="find-a-car">
         <div class="container">
           <form
-            action="{{ route('car.search') }}"
+            action="{{ route('bike.search') }}"
             method="GET"
             class="find-a-car-form card flex p-medium"
           >
