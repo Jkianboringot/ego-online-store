@@ -1,26 +1,26 @@
 <x-app-layout>
   <main>
     <div class="container">
-      <h1 class="bike-details-page-title">{{ $bike->maker->name }} {{ $bike->model->name }} - {{ $bike->year }}</h1>
+      <h1 class="car-details-page-title">{{ $bike->maker->name }} {{ $bike->model->name }} - {{ $bike->year }}</h1>
 
-      <div class="bike-details-content">
-        <div class="bike-images-and-description">
-          <div class="bike-images-bikeousel">
-            <div class="bike-image-wrapper">
+      <div class="car-details-content">
+        <div class="car-images-and-description">
+          <div class="car-images-carousel">
+            <div class="car-image-wrapper">
               <img
                 src="{{ $bike->primaryImage }}"
                 alt=""
-                class="bike-active-image"
+                class="car-active-image"
                 id="activeImage" />
             </div>
-            <div class="bike-image-thumbnails">
+            <div class="car-image-thumbnails">
               @foreach ($bike->images as $image )
               <img src="{{ $image->image_path }}" alt="" />
 
               @endforeach
 
             </div>
-            <button class="bikeousel-button prev-button" id="prevButton">
+            <button class="carousel-button prev-button" id="prevButton">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -34,7 +34,7 @@
                   d="M15.75 19.5 8.25 12l7.5-7.5" />
               </svg>
             </button>
-            <button class="bikeousel-button next-button" id="nextButton">
+            <button class="carousel-button next-button" id="nextButton">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -50,8 +50,8 @@
             </button>
           </div>
 
-          <div class="biked bike-detailed-description">
-            <h2 class="bike-details-title">Detailed Description</h2>
+          <div class="card car-detailed-description">
+            <h2 class="car-details-title">Detailed Description</h2>
             <p>
               {!! $bike->description !!}
             </p>
@@ -59,9 +59,9 @@
           </div>
 
         </div>
-        <div class="bike-details biked">
+        <div class="car-details card">
           <div class="flex items-center justify-between">
-            <p class="bike-details-price">
+            <p class="car-details-price">
               <small>PISO</small>
               -{{ $bike->price }}
             </p>
@@ -82,7 +82,7 @@
           </div>
 
           <hr />
-          <table class="bike-details-table">
+          <table class="car-details-table">
             <tbody>
               <tr>
                 <th>Maker</th>
@@ -121,9 +121,9 @@
             <img
               src="/img/avatar.png"
               alt=""
-              class="bike-details-owner-image" />
+              class="car-details-owner-image" />
             <div>
-              <h3 class="bike-details-owner">{{ $bike->user->name }}</h3>
+              <h3 class="car-details-owner">{{ $bike->user->name }}</h3>
               <div class="text-muted">{{ $bike->user->bikes()->count() }} Bikes</div>
             </div>
           </div>
@@ -142,7 +142,7 @@
             </svg>
 
             {{ Str::mask($bike->phone,'*',-3) }}
-            <span class="bike-details-phone-view">view full number</span>
+            <span class="car-details-phone-view">view full number</span>
           </a>
         </div>
       </div>
