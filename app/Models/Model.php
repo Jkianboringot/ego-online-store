@@ -15,9 +15,9 @@ class Model extends EloModel
     {
         return $this->belongsTo(related: Maker::class);
     }
-    public function cars()
+    public function bikes()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Bike::class);
     }
 
    

@@ -11,21 +11,21 @@
         <div class="container">
           <div class="slide-content">
             <h1 class="hero-slider-title">
-              Buy <strong>The Best Cars</strong> <br />
+              Buy <strong>The Best Bikes</strong> <br />
               in your region
             </h1>
             <div class="hero-slider-content">
               <p>
-                Use powerful search tool to find your desired cars based on
-                multiple search criteria: Maker, Model, Year, Price Range, Car
+                Use powerful search tool to find your desired bikes based on
+                multiple search criteria: Maker, Model, Year, Price Range, Bike
                 Type, etc...
               </p>
 
-              <button class="btn btn-hero-slider">Find the car</button>
+              <button class="btn btn-hero-slider">Find the bike</button>
             </div>
           </div>
           <div class="slide-image">
-            <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+            <img src="/img/images (10).jpeg" alt="" class="img-responsive" />
           </div>
         </div>
       </div>
@@ -35,19 +35,19 @@
           <div class="slide-content">
             <h2 class="hero-slider-title">
               Do you want to <br />
-              <strong>sell your car?</strong>
+              <strong>sell your bike?</strong>
             </h2>
             <div class="hero-slider-content">
               <p>
-                Submit your car in our user friendly interface, describe it,
+                Submit your bike in our user friendly interface, describe it,
                 upload photos and the perfect buyer will find it...
               </p>
 
-              <button class="btn btn-hero-slider">Add Your Car</button>
+              <button class="btn btn-hero-slider">Add Your Bike</button>
             </div>
           </div>
           <div class="slide-image">
-            <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+            <img src="/img/images (10).jpeg" alt="" class="img-responsive" />
           </div>
         </div>
       </div>
@@ -91,12 +91,12 @@
 
     <section>
       <div class="container">
-        <h2>Latest Added Cars</h2>
+        <h2>Latest Added Bikes</h2>
         <div class="car-items-listing">
          
 
-          @foreach($cars as $car)
-          <x-car-item :car='$car' />
+          @foreach($bikes as $bike)
+          <x-bike-item :bike='$bike' />
           @endforeach
         </div>
       </div>

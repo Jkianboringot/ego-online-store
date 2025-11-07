@@ -46,23 +46,23 @@ public function index(){
 
 
 @php
-$cars=[1,2,3,4,5];
+$bikes=[1,2,3,4,5];
 $motor=[0,9,8,7,6,];
 @endphp
 
-@foreach ($cars as  $car)
-    @include('car.view',['car'=>$car])
+@foreach ($bikes as  $bike)
+    @include('bike.view',['bike'=>$bike])
 @endforeach
 
 <br>
 <!-- this too do the exact same things  -->
 
-@each('car.view',$motor,'car')
-    {{-- this @each can have a 4th parameter, it acts as  backup view if car.view does ont exit
+@each('bike.view',$motor,'bike')
+    {{-- this @each can have a 4th parameter, it acts as  backup view if bike.view does ont exit
         if it does not it will go to that 4th parameter --}}
         <br>
         
 
 
-@includeif('car.alert',['messege'=>'fuck you rou cheated','color'=>'red'])
-@includeif('car.alert',['messege'=>'i like dead people','color'=>'blue'])
+@includeif('bike.alert',['messege'=>'fuck you rou cheated','color'=>'red'])
+@includeif('bike.alert',['messege'=>'i like dead people','color'=>'blue'])

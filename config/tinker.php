@@ -29,10 +29,8 @@ return [
     */
 
    'alias' => [
-    'Car' => App\Models\Car::class,
+    'Bike' => App\Models\Bike::class,
     'FuelType' => App\Models\FuelType::class,
-    'City' => App\Models\City::class,
-    'State' => App\Models\State::class,
 ],
 
 

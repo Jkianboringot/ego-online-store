@@ -49,13 +49,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function favoriteCars()
+    public function favoriteBikes()
     { //for many to many relation
-    return $this->belongsToMany(Car::class,'favorite_cars');
+    return $this->belongsToMany(Bike::class,'favorite_bikes');
     }
 
-    public function cars()
+    public function bikes()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Bike::class);
     }
 }

@@ -3,8 +3,8 @@
     <p>{{$var}}</p>
     @endforeach
 <br>
-    @foreach ($cars as $car )
-    <p>{{$car}}</p>
+    @foreach ($bikes as $bike )
+    <p>{{$bike}}</p>
     @endforeach
 <br>
 

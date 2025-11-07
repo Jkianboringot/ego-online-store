@@ -8,8 +8,6 @@
   </a>
   <div class="p-medium">
     <div class="flex items-center justify-between">
-      <small class="m-0 text-muted">{{ $car->city_name }}</small>
-                                        <!-- access by manual query in car searchmethod -->
       <button class="btn-heart text-primary">
 
         <svg xmlns="http://www.w3.org/2000/svg"

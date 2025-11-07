@@ -10,9 +10,9 @@ class Maker extends Model
     protected $fillable=['name'];
     use HasFactory;
     public $timestamps=false;
-    public function cars()
+    public function bikes()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Bike::class);
     }
 
     public function models()

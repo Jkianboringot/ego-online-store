@@ -16,11 +16,11 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
-        
-Route::get(
-    'index',
-    [HomeController::class, 'index']
-)->name('index'); //->middleware('auth')
+
+    Route::get(
+        'index',
+        [HomeController::class, 'index']
+    )->name('index'); //->middleware('auth')
     //find ohter way to access this through web not auth
 
     Route::post('register', [RegisteredUserController::class, 'store']);
@@ -71,5 +71,5 @@ Route::middleware('auth')->group(function () {
     //     return redirect()->route('/');
     // } )
     //     ->name('logout');
-        
+
 });

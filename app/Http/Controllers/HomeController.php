@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
-use App\Models\CarFeature;
-use App\Models\CarImage;
-use App\Models\CarType;
+use App\Models\Bike;
+use App\Models\BikeFeature;
+use App\Models\BikeImage;
+use App\Models\BikeType;
 use App\Models\FuelType;
 use App\Models\Maker;
 use App\Models\Model;
 use App\Models\User;
-use App\Models\FavoriteCar;
+use App\Models\FavoriteBike;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Http\Request;
 use Illuminate\Testing\Fluent\Concerns\Debugging;
@@ -22,34 +22,34 @@ class HomeController extends Controller
 
         // ## ways of creating/inserting data in table[
 
-        // $car=Car::get();
+        // $bike=Bike::get();
 
-        // $car_publish=Car::where('published_at','!=',null)->get();
-        // // $car_publish=Car::where('published_at','!=',null)->first();select first
+        // $bike_publish=Bike::where('published_at','!=',null)->get();
+        // // $bike_publish=Bike::where('published_at','!=',null)->first();select first
 
-        // $car_order=Car::where('published_at','!=',null)->
+        // $bike_order=Bike::where('published_at','!=',null)->
         // where('user_id',1)->
         // orderBy('id','desc')->limit(2)->get();
 
-        // $car=new Car;
-        //     $car->year = 2120;
-        //     $car->price = 20300;
-        //     $car->mileage = 15010;
-        //     $car->vin = 'VIN001';
-        //     $car->address = '123 Main St';
-        //     $car->phone = '1111111111';
-        //     $car->description = 'Toyota Corolla';
-        //     $car->maker_id = 1;
-        //     $car->model_id = 1;
-        //     $car->car_type_id = 1;
-        //    $car-> fuel_type_id = 1;
-        //     $car->user_id = 1;
-        //     $car->city_id = 1;
-        //     $car->published_at=now();
-        //     $car->deleted_at=null;
-        // $car->save();
+        // $bike=new Bike;
+        //     $bike->year = 2120;
+        //     $bike->price = 20300;
+        //     $bike->mileage = 15010;
+        //     $bike->vin = 'VIN001';
+        //     $bike->address = '123 Main St';
+        //     $bike->phone = '1111111111';
+        //     $bike->description = 'Toyota Corolla';
+        //     $bike->maker_id = 1;
+        //     $bike->model_id = 1;
+        //     $bike->bike_type_id = 1;
+        //    $bike-> fuel_type_id = 1;
+        //     $bike->user_id = 1;
+        //     $bike->city_id = 1;
+        //     $bike->published_at=now();
+        //     $bike->deleted_at=null;
+        // $bike->save();
 
-        // $carData=[ 
+        // $bikeData=[ 
         //     'year' => 2010,
         //     'price' => 45320,
         //     'mileage' => 1200,
@@ -59,7 +59,7 @@ class HomeController extends Controller
         //     'description' => 'Toyota toyp',
         //     'maker_id' => 1,
         //     'model_id' => 1,
-        //     'car_type_id' => 1,
+        //     'bike_type_id' => 1,
         //     'fuel_type_id' => 1,
         //     'user_id' => 1,
         //     'city_id' => 1,
@@ -69,37 +69,37 @@ class HomeController extends Controller
 
         //approaches for filling data 
         //approach 1
-        // $car=Car::create($carData);
+        // $bike=Bike::create($bikeData);
 
         // //approach 2
-        // $car2=new Car;
-        // $car2->fill($carData);
-        // $car2->save();
+        // $bike2=new Bike;
+        // $bike2->fill($bikeData);
+        // $bike2->save();
 
         // //approach 3
-        // $car3=new Car($carData);
-        // // short hand version of the car2
+        // $bike3=new Bike($bikeData);
+        // // short hand version of the bike2
 
-        // dd($car);]
+        // dd($bike);]
 
 
         // how to update table data 
 
         // approache 1
-        // $car=Car::find(1);
-        // $car->price=1000;
-        // $car->save();
+        // $bike=Bike::find(1);
+        // $bike->price=1000;
+        // $bike->save();
 
         // approache 2 customize
         // update part
-        // $newprice=Car::where('vin','VIN005')->value('price');
-        // Car::updateOrCreate([
+        // $newprice=Bike::where('vin','VIN005')->value('price');
+        // Bike::updateOrCreate([
         //     'vin'=>'VIN006','price'=>15000 //search conditions/condition
         // ],
         // ['price'=>$newprice*100]);
         //create part needs all column to be filled to work , the one on top will thhourgh errer becuase only one column is being filled 
         // but i must filled all data
-        //   $carData=[ 
+        //   $bikeData=[ 
         //         'year' => 2010,  
         //         'price' => 45320,
         //         'mileage' => 1200,
@@ -109,7 +109,7 @@ class HomeController extends Controller
         //         'description' => 'Toyota toyp',
         //         'maker_id' => 1,
         //         'model_id' => 1,
-        //         'car_type_id' => 1,
+        //         'bike_type_id' => 1,
         //         'fuel_type_id' => 1,
         //         'user_id' => 1,
         //         'city_id' => 1,
@@ -117,38 +117,38 @@ class HomeController extends Controller
 
         //     ];
 
-        // Car::updateOrCreate([
+        // Bike::updateOrCreate([
         //     'vin'=>'VIN006','price'=>15000 //search conditions/condition
         // ],
-        // $carData); //this will not work beucase user_id is not guarded 
+        // $bikeData); //this will not work beucase user_id is not guarded 
 
         //appraoch 3 #mass update
-        // Car::where('published_at',null)->
+        // Bike::where('published_at',null)->
         // where('user_id',2)
         // ->update(['published_at'=>now()]);
 
         //DEleting
 
         //appraoch 1
-        // $car=Car::find(1);
-        // $car->delete();
+        // $bike=Bike::find(1);
+        // $bike->delete();
 
         //appraoch 2 #mass delete
         // first way
-        //         Car::destroy([2,3]);
+        //         Bike::destroy([2,3]);
         //         // second way
-        //         Car::where('published_at','!=',null)->
+        //         Bike::where('published_at','!=',null)->
         //         where('user_id',4)
         //         ->delete();
         //         //third way
-        //         Car::truncate(); //this just actuall delete all data , softdelete dont work
+        //         Bike::truncate(); //this just actuall delete all data , softdelete dont work
 
-        // dd(Car::withTrashed()->get());
+        // dd(Bike::withTrashed()->get());
 
 
-        //✅challenge:: retrieve all car records where the price is greater than 20k
-        //  $car=Car::where('price','>',20000)->get();
-        //         dd($car);
+        //✅challenge:: retrieve all bike records where the price is greater than 20k
+        //  $bike=Bike::where('price','>',20000)->get();
+        //         dd($bike);
 
 
         //✅challenge:: fetch the maker detailed where the maker name is toyota
@@ -159,32 +159,32 @@ class HomeController extends Controller
         // FuelType::create(['name'=>'electric']);
         // dd(FuelType::get());
 
-        //c✅hallenge :: udpate  the price of the car with id 1 o 15k
-        // Car::find(1)->update(['price'=>1]);
-        // dd(Car::get());
+        //c✅hallenge :: udpate  the price of the bike with id 1 o 15k
+        // Bike::find(1)->update(['price'=>1]);
+        // dd(Bike::get());
 
-        //✅challenge:: delete all car records where the year us before 2020
-        // Car::where('year','<',2020)->delete();
+        //✅challenge:: delete all bike records where the year us before 2020
+        // Bike::where('year','<',2020)->delete();
         // not ideal  to do it like this becuae year is suppose to be a date datatype be becuase its not, this is ok
-        // dd(Car::where('deleted_at','!=',null)->withTrashed()->get());
+        // dd(Bike::where('deleted_at','!=',null)->withTrashed()->get());
 
-        // $car=Car::find(1);
+        // $bike=Bike::find(1);
         // // //udpate way 1
-        // // $car->features->abs =0;
-        // // $car->features->save();
+        // // $bike->features->abs =0;
+        // // $bike->features->save();
         // //udpate way 2
-        // $car->features->update(['abs'=>0]);
-        // // $car->primaryImage->delete();
+        // $bike->features->update(['abs'=>0]);
+        // // $bike->primaryImage->delete();
 
-        // dd($car->features,$car->primaryImage);
+        // dd($bike->features,$bike->primaryImage);
 
-        //❌car relation for hasone relationship
+        //❌bike relation for hasone relationship
 
-        //this will give Duplicate entry for primary key because car can have only one carfeature , or a one to one relationship
-        //if this was hasmany this error will not happen like the one below where you can stuck as many image to one car
-        // $car=Car::find(2);
+        //this will give Duplicate entry for primary key because bike can have only one bikefeature , or a one to one relationship
+        //if this was hasmany this error will not happen like the one below where you can stuck as many image to one bike
+        // $bike=Bike::find(2);
 
-        // $carfeatures=New CarFeature([
+        // $bikefeatures=New BikeFeature([
         //                 'abs' => 0,
         //                 'air_conditioning' => 0,
         //                 'power_windows' => 0,
@@ -197,18 +197,18 @@ class HomeController extends Controller
         //                 'climate_control' => 0,
         //                 'rear_parking_sensors' => 0,
         //                 'leather_seats' => 0,]);
-        // $car->features()->save($carfeatures);
-        // dd($car->features);
+        // $bike->features()->save($bikefeatures);
+        // dd($bike->features);
 
 
         // //❌ hasmany relationship 
-        // $car=Car::find(1);
-        // // $image= new CarImage(['image_path'=>'somthing','position'=>2]);
-        // // $car->images()->save($image);
+        // $bike=Bike::find(1);
+        // // $image= new BikeImage(['image_path'=>'somthing','position'=>2]);
+        // // $bike->images()->save($image);
 
-        // // $car->images()->create(['image_path'=>'somthing2','position'=>3]);
+        // // $bike->images()->create(['image_path'=>'somthing2','position'=>3]);
         // //how to save with many data in one go
-        // $car->images()->createMany([['image_path'=>'10','position'=>8],
+        // $bike->images()->createMany([['image_path'=>'10','position'=>8],
         // ['image_path'=>'somthing3','position'=>4],
         // ['image_path'=>'somthing4','position'=>5],
         // ['image_path'=>'somthing5','position'=>6],
@@ -217,43 +217,43 @@ class HomeController extends Controller
         // ]);
 
 
-        // dd($car->images);
-        // $car=Car::find(1);
-        // dd($car->carType);
+        // dd($bike->images);
+        // $bike=Bike::find(1);
+        // dd($bike->bikeType);
 
         // ❌Many to one relationship
 
-        // $carType=CarType::where('name','Sedan')->first();
-        // $car=Car::whereBelongsTo($carType)->get();//select all the cars that belongs or has a relationship to sedan
-        // // this $carType->cars and the one above whereBelongsto are actaully the same 
-        // dd($carType->cars,$car);
+        // $bikeType=BikeType::where('name','Sedan')->first();
+        // $bike=Bike::whereBelongsTo($bikeType)->get();//select all the bikes that belongs or has a relationship to sedan
+        // // this $bikeType->bikes and the one above whereBelongsto are actaully the same 
+        // dd($bikeType->bikes,$bike);
 
         // how to update in many to one
         //First way of updating somthing like an id in many to one
-        // $car=Car::find(4);
-        // $carType=CarType::where('name','Sedan')->first();
-        // // $car->carType->car_type_id=$carType->id; //pretty much saying update the car+type id of cars to what every id is sedan in cartype
-        // // $car->save();
+        // $bike=Bike::find(4);
+        // $bikeType=BikeType::where('name','Sedan')->first();
+        // // $bike->bikeType->bike_type_id=$bikeType->id; //pretty much saying update the bike+type id of bikes to what every id is sedan in biketype
+        // // $bike->save();
         // //second way of updating an someting like an id in many to one
-        // $car->carType()->associate($carType);// pretty much the same sa what its doing above
-        // $car->save();
-        // dd($carType->cars);
+        // $bike->bikeType()->associate($bikeType);// pretty much the same sa what its doing above
+        // $bike->save();
+        // dd($bikeType->bikes);
 
         //❌Many to MAny
 
-        // $car=Car::find(1);
-        // dd($car->userFavorites);
+        // $bike=Bike::find(1);
+        // dd($bike->userFavorites);
 
         // $user=User::find(1);
-        // dd($user->favoriteCars);
+        // dd($user->favoriteBikes);
 
         //how to add new record in pivot table in many to many
         // $user=User::find(1);
-        // // $user->favoriteCars()->attach([3,4]); //this is for adding 
-        // // $user->favoriteCars()->sync([5]);
-        // $user->favoriteCars()->detach([3,4]); //this is for deleting 
+        // // $user->favoriteBikes()->attach([3,4]); //this is for adding 
+        // // $user->favoriteBikes()->sync([5]);
+        // $user->favoriteBikes()->detach([3,4]); //this is for deleting 
 
-        // dd($user->favoriteCars);
+        // dd($user->favoriteBikes);
 
 
         //❌Factories
@@ -278,8 +278,8 @@ class HomeController extends Controller
 
 
         //❌Factory with one to many relationship
-        // hasModels(5) means: for each Maker, also create 5 CarModel instances.
-        // If you had hasCars(5), it would look for CarFactory.
+        // hasModels(5) means: for each Maker, also create 5 BikeModel instances.
+        // If you had hasBikes(5), it would look for BikeFactory.
 
         // $vars=Maker::factory()->count(1)->hasModels(1)->create();
         // ->hasModels(1,function(array $attributes,Maker $maker){
@@ -314,21 +314,21 @@ class HomeController extends Controller
 
 
         // $vars = User::factory()
-        // ->has(Car::factory()->count(5), 'favoriteCars')
-        // // ->hasAttached(Car::factory()->count(5), 'favoriteCars')
+        // ->has(Bike::factory()->count(5), 'favoriteBikes')
+        // // ->hasAttached(Bike::factory()->count(5), 'favoriteBikes')
         // ->create();
 
 
 
-        // $cars = Car::get();
-        // $favorites = FavoriteCar::get();
+        // $bikes = Bike::get();
+        // $favorites = FavoriteBike::get();
         // $users= User::get();
 
 
 
 
-        $cars = Car::with(['city', 'maker', 'model',
-                     'carType', 'fuelType', 'primaryImage'])
+        $bikes = Bike::with([ 'maker', 'model',
+                     'bikeType', 'fuelType', 'primaryImage'])
             ->where('published_at', '<', now())
             ->orderBy('published_at', 'desc')->limit(30)->get()
 ;
@@ -338,7 +338,7 @@ class HomeController extends Controller
             // ->toSql()
             // ->dump()
         return view('home.index', [
-            'cars' => $cars
+            'bikes' => $bikes
         ]);
     }
 }

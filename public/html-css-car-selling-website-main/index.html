@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Car Findal Service</title>
+    <title>Bike Findal Service</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,7 +49,7 @@
           </svg>
         </button>
         <div class="navbar-auth">
-          <a href="/add_new.html" class="btn btn-add-new-car">
+          <a href="/add_new.html" class="btn btn-add-new-bike">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -65,7 +65,7 @@
               />
             </svg>
 
-            Add new Car
+            Add new Bike
           </a>
           <div class="navbar-menu" tabindex="-1">
             <a href="javascript:void(0)" class="navbar-menu-handler">
@@ -87,10 +87,10 @@
             </a>
             <ul class="submenu">
               <li>
-                <a href="my_cars.html">My Cars</a>
+                <a href="my_bikes.html">My Bikes</a>
               </li>
               <li>
-                <a href="watchlist.html">My Favourite Cars</a>
+                <a href="watchlist.html">My Favourite Bikes</a>
               </li>
               <li>
                 <form action="#" method="post">
@@ -137,28 +137,28 @@
 
     <!-- Home Slider -->
     <section class="hero-slider">
-      <!-- Carousel wrapper -->
+      <!-- Bikeousel wrapper -->
       <div class="hero-slides">
         <!-- Item 1 -->
         <div class="hero-slide">
           <div class="container">
             <div class="slide-content">
               <h1 class="hero-slider-title">
-                Buy <strong>The Best Cars</strong> <br />
+                Buy <strong>The Best Bikes</strong> <br />
                 in your region
               </h1>
               <div class="hero-slider-content">
                 <p>
-                  Use powerful search tool to find your desired cars based on
-                  multiple search criteria: Maker, Model, Year, Price Range, Car
+                  Use powerful search tool to find your desired bikes based on
+                  multiple search criteria: Maker, Model, Year, Price Range, Bike
                   Type, etc...
                 </p>
 
-                <button class="btn btn-hero-slider">Find the car</button>
+                <button class="btn btn-hero-slider">Find the bike</button>
               </div>
             </div>
             <div class="slide-image">
-              <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+              <img src="/img/bike-png-39071.png" alt="" class="img-responsive" />
             </div>
           </div>
         </div>
@@ -168,19 +168,19 @@
             <div class="slide-content">
               <h2 class="hero-slider-title">
                 Do you want to <br />
-                <strong>sell your car?</strong>
+                <strong>sell your bike?</strong>
               </h2>
               <div class="hero-slider-content">
                 <p>
-                  Submit your car in our user friendly interface, describe it,
+                  Submit your bike in our user friendly interface, describe it,
                   upload photos and the perfect buyer will find it...
                 </p>
 
-                <button class="btn btn-hero-slider">Add Your Car</button>
+                <button class="btn btn-hero-slider">Add Your Bike</button>
               </div>
             </div>
             <div class="slide-image">
-              <img src="/img/car-png-39071.png" alt="" class="img-responsive" />
+              <img src="/img/bike-png-39071.png" alt="" class="img-responsive" />
             </div>
           </div>
         </div>
@@ -225,15 +225,15 @@
     <!--/ Home Slider -->
 
     <main>
-      <!-- Find a car form -->
-      <section class="find-a-car">
+      <!-- Find a bike form -->
+      <section class="find-a-bike">
         <div class="container">
           <form
             action="/s.html"
             method="GET"
-            class="find-a-car-form card flex p-medium"
+            class="find-a-bike-form biked flex p-medium"
           >
-            <div class="find-a-car-inputs">
+            <div class="find-a-bike-inputs">
               <div>
                 <select id="makerSelect" name="maker_id">
                   <option value="">Maker</option>
@@ -445,88 +445,9 @@
                   <option value="5">Oregon</option>
                 </select>
               </div>
+             
               <div>
-                <select id="citySelect" name="city_id">
-                  <option value="" style="display: block">City</option>
-                  <option value="3" data-parent="1" style="display: none">
-                    Carmelstad
-                  </option>
-                  <option value="8" data-parent="2" style="display: none">
-                    Cormierville
-                  </option>
-                  <option value="14" data-parent="3" style="display: none">
-                    Dareville
-                  </option>
-                  <option value="13" data-parent="3" style="display: none">
-                    Demarcotown
-                  </option>
-                  <option value="10" data-parent="2" style="display: none">
-                    Doylebury
-                  </option>
-                  <option value="18" data-parent="4" style="display: none">
-                    East Alfonso
-                  </option>
-                  <option value="9" data-parent="2" style="display: none">
-                    East Ladarius
-                  </option>
-                  <option value="23" data-parent="5" style="display: none">
-                    Kelvinmouth
-                  </option>
-                  <option value="24" data-parent="5" style="display: none">
-                    Kemmerchester
-                  </option>
-                  <option value="25" data-parent="5" style="display: none">
-                    Kunzeview
-                  </option>
-                  <option value="6" data-parent="2" style="display: none">
-                    Lake Kelsi
-                  </option>
-                  <option value="16" data-parent="4" style="display: none">
-                    Larsonview
-                  </option>
-                  <option value="2" data-parent="1" style="display: none">
-                    Lindstad
-                  </option>
-                  <option value="5" data-parent="1" style="display: none">
-                    Loganshire
-                  </option>
-                  <option value="15" data-parent="3" style="display: none">
-                    Maximilliaberg
-                  </option>
-                  <option value="7" data-parent="2" style="display: none">
-                    Monroeside
-                  </option>
-                  <option value="17" data-parent="4" style="display: none">
-                    Muellerville
-                  </option>
-                  <option value="12" data-parent="3" style="display: none">
-                    New Bennieville
-                  </option>
-                  <option value="1" data-parent="1" style="display: none">
-                    New Britneystad
-                  </option>
-                  <option value="21" data-parent="5" style="display: none">
-                    New Devenmouth
-                  </option>
-                  <option value="22" data-parent="5" style="display: none">
-                    North Alvah
-                  </option>
-                  <option value="20" data-parent="4" style="display: none">
-                    Port Johnson
-                  </option>
-                  <option value="19" data-parent="4" style="display: none">
-                    South Shanellefort
-                  </option>
-                  <option value="11" data-parent="3" style="display: none">
-                    Toyport
-                  </option>
-                  <option value="4" data-parent="1" style="display: none">
-                    West Lulu
-                  </option>
-                </select>
-              </div>
-              <div>
-                <select name="car_type_id">
+                <select name="bike_type_id">
                   <option value="">Type</option>
                   <option value="2">Hatchback</option>
                   <option value="6">Jeep</option>
@@ -563,29 +484,29 @@
               </div>
             </div>
             <div>
-              <button type="button" class="btn btn-find-a-car-reset">
+              <button type="button" class="btn btn-find-a-bike-reset">
                 Reset
               </button>
-              <button class="btn btn-primary btn-find-a-car-submit">
+              <button class="btn btn-primary btn-find-a-bike-submit">
                 Search
               </button>
             </div>
           </form>
         </div>
       </section>
-      <!--/ Find a car form -->
+      <!--/ Find a bike form -->
 
-      <!-- New Cars -->
+      <!-- New Bikes -->
       <section>
         <div class="container">
-          <h2>Latest Added Cars</h2>
-          <div class="car-items-listing">
-            <div class="car-item card">
+          <h2>Latest Added Bikes</h2>
+          <div class="bike-items-listing">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -608,21 +529,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -645,21 +566,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -682,21 +603,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -719,21 +640,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -756,21 +677,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -793,21 +714,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -830,21 +751,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -867,21 +788,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -904,21 +825,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -941,21 +862,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -978,21 +899,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -1015,21 +936,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -1052,21 +973,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -1089,21 +1010,21 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
-            <div class="car-item card">
+            <div class="bike-item biked">
               <a href="/view.html">
                 <img
-                  src="/img/cars/Lexus-RX200t-2016/1.jpeg"
+                  src="/img/bikes/Lexus-RX200t-2016/1.jpeg"
                   alt=""
-                  class="car-item-img rounded-t"
+                  class="bike-item-img rounded-t"
                 />
               </a>
               <div class="p-medium">
@@ -1126,19 +1047,19 @@
                     </svg>
                   </button>
                 </div>
-                <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-                <p class="car-item-price">$25,000</p>
+                <h2 class="bike-item-title">2016 - Lexus RX200t</h2>
+                <p class="bike-item-price">$25,000</p>
                 <hr />
                 <p class="m-0">
-                  <span class="car-item-badge">SUV</span>
-                  <span class="car-item-badge">Electric</span>
+                  <span class="bike-item-badge">SUV</span>
+                  <span class="bike-item-badge">Electric</span>
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!--/ New Cars -->
+      <!--/ New Bikes -->
     </main>
 
     <footer></footer>

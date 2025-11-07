@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favorite_bikes', function (Blueprint $table) {
+        Schema::create('bike_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bike_id')->constrained();
-            $table->foreignId('user_id')->constrained();
-
+            $table->enum('types',['Manual','Semi Manual','Auto Matic']);
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('favourite_bikes');
+        Schema::dropIfExists('bike_types');
     }
 };
