@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->integer('year');
             $table->integer('price');
-            $table->string('vin');
             $table->string('address');
             $table->string('phone',45);
             $table->longtext('description')->nullable();

@@ -28,8 +28,28 @@ Route::get(
 
 Route::get('/bike/search', [BikeController::class, 'search'])->name('bike.search');
 Route::get('/bike/watchlist', [BikeController::class, 'watchlist'])->name('bike.watchlist');
+Route::get('/bike/edit', [BikeController::class, 'edit'])->name('bike.edit');
+
+Route::Post('/store',[BikeController::class,'store'])->name('bike.store');
 
 Route::resource('bike', BikeController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,10 +59,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get('/bike/search',[BikeController::class,'search'])->name('bike.search');
-Route::get('/bike/watchlist',[BikeController::class,'watchlist'])->name('bike.watchlist');
-
-Route::resource('bike', BikeController::class);
 
 
 require __DIR__ . '/auth.php';

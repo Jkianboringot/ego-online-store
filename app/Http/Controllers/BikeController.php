@@ -18,35 +18,27 @@ class BikeController extends Controller
     public function index()
     {
         $bikes = User::find(2)->bikes()->with(['maker', 'model', 'primaryImage'])
-            //so the placement of iwth does matter , it was on user and user has no 
-            // relation to this bikes do thats why it give me undifined
+          
             ->orderBy('created_at', 'desc')->paginate(5);
-        // ->withPath()
-        // ->appends(['sort=>'price']) 
-        // ->withQueryString(['sort=>'price']) 
-        // ->fragment('bikes') 
+       
         return view('bike.index', ['bikes' => $bikes]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('bike.create');
+        $bike_types=['Electric','Scooter','Sport Bike'];
+        $fuel_types=['Gasoline','Diesel','Electric','Hybrid'];
+
+        return view('bike.create',[
+            'bike_types'=>$bike_types,
+            'fuel_types'=>$fuel_types,
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Bike $bike)
     {
         return view('bike.show', ['bike' => $bike]);
@@ -86,14 +78,6 @@ class BikeController extends Controller
         ])
             // ->where('published_at', '<', now())
             ->orderBy('published_at', 'desc');
-
-        // $query->join('cities', 'cities.id', '=', 'bikes.city_id')
-        //     ->join('bike_types','bike_types.id','=','bikes.bike_type_id')
-
-        // ->where('cities.state_id',1)->
-        // where('bike_type.name','Sedan');
-
-        // $query->select('bikes.*','cities.name as city_name'); //manual way you dont have to use eager loading can be good if eager loading is shit (loading every column and you only need one)
 
 
         $bikes = $query->paginate(10);
