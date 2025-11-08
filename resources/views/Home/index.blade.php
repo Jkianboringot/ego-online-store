@@ -92,7 +92,7 @@
     <section>
       <div class="container">
         <h2>Latest Added Bikes</h2>
-        <div class="car-items-listing">
+        <div class="bike-items-listing">
          
 
           @foreach($bikes as $bike)

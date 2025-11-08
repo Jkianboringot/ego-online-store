@@ -570,7 +570,7 @@ main {
   background-color: var(--primary-color-hover);
 }
 
-.btn-add-new-car {
+.btn-add-new-bike {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -580,8 +580,8 @@ main {
   transition: all 0.3s;
 }
 
-.btn-add-new-car:hover,
-.btn-add-new-car:focus {
+.btn-add-new-bike:hover,
+.btn-add-new-bike:focus {
   color: white;
   background-color: var(--primary-color);
 }
@@ -687,46 +687,46 @@ main {
   padding: 1rem 2.5rem;
 }
 
-.find-a-car-inputs {
+.find-a-bike-inputs {
   display: flex;
   flex-wrap: wrap;
 }
 
-.find-a-car-inputs > div {
+.find-a-bike-inputs > div {
   width: 20%;
   padding: 0.25rem;
 }
 
-.btn-find-a-car-reset,
-.btn-find-a-car-submit {
+.btn-find-a-bike-reset,
+.btn-find-a-bike-submit {
   width: 100%;
   padding: 0.5rem;
   margin: 0.25rem;
   height: 40px;
 }
 
-.car-items-listing {
+.bike-items-listing {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.car-item-title {
+.bike-item-title {
   margin: 0.75rem 0;
   font-size: 16px;
 }
 
-.car-item-price {
+.bike-item-price {
   font-weight: 500;
 }
 
-.car-item-img {
+.bike-item-img {
   height: 160px;
   width: 100%;
   object-fit: cover;
 }
 
-.car-item-badge {
+.bike-item-badge {
   background-color: #e5e5e5;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -750,7 +750,7 @@ main {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.card-found-cars {
+.card-found-bikes {
   padding: 1rem;
   margin-bottom: 1rem;
   display: flex;
@@ -789,7 +789,7 @@ a.pagination-item:hover {
   color: var(--primary-color);
 }
 
-.car-images-wrapper {
+.bike-images-wrapper {
   display: flex;
   gap: 1rem;
 }
@@ -798,30 +798,30 @@ a.pagination-item:hover {
   flex: 1
 }
 
-.car-details-page-title {
+.bike-details-page-title {
   margin-top: 0;
   margin-bottom: 0.25rem;
 }
 
-.car-details-region {
+.bike-details-region {
   margin-bottom: 1rem;
   font-size: 14px;
   color: var(--text-muted-color);
 }
 
-.car-details-content {
+.bike-details-content {
   display: flex;
   gap: 1rem;
   align-items: start;
 }
 
-.car-images-carousel {
+.bike-images-carousel {
   display: flex;
   height: 520px;
   position: relative;
 }
 
-.car-image-wrapper {
+.bike-image-wrapper {
   flex: 1;
   overflow: hidden;
   display: flex;
@@ -829,21 +829,21 @@ a.pagination-item:hover {
   justify-content: start;
 }
 
-.car-active-image {
+.bike-active-image {
   max-width: 100%;
   max-height: 100%;
   border-radius: 1rem;
   object-fit: cover;
 }
 
-.car-image-thumbnails {
+.bike-image-thumbnails {
   width: 110px;
   padding: 5px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.car-image-thumbnails img {
+.bike-image-thumbnails img {
   width: 100%;
   height: 80px;
   border-radius: 4px;
@@ -851,7 +851,7 @@ a.pagination-item:hover {
   cursor: pointer;
 }
 
-.car-image-thumbnails .active-thumbnail {
+.bike-image-thumbnails .active-thumbnail {
   outline: 2px solid rgb(54, 145, 197);
 }
 
@@ -884,69 +884,69 @@ a.pagination-item:hover {
 }
 
 /* width */
-.car-image-thumbnails::-webkit-scrollbar {
+.bike-image-thumbnails::-webkit-scrollbar {
   width: 4px;
 }
 
 /* Track */
-.car-image-thumbnails::-webkit-scrollbar-track {
+.bike-image-thumbnails::-webkit-scrollbar-track {
   background: transparent;
 }
 
 /* Handle */
-.car-image-thumbnails::-webkit-scrollbar-thumb {
+.bike-image-thumbnails::-webkit-scrollbar-thumb {
   background-color: transparent;
   transition: all 0.3s;
 }
 
-.car-image-thumbnails:hover::-webkit-scrollbar-thumb {
+.bike-image-thumbnails:hover::-webkit-scrollbar-thumb {
   background: #555;
 }
 
 /* Handle on hover */
-.car-image-thumbnails::-webkit-scrollbar-thumb:hover {
+.bike-image-thumbnails::-webkit-scrollbar-thumb:hover {
   background: #444;
 }
 
-.car-details {
+.bike-details {
   padding: 1.5rem;
   min-width: 300px;
 }
 
-.car-images-and-description {
+.bike-images-and-description {
   flex: 1;
 }
 
-.car-details-price {
+.bike-details-price {
   font-size: 28px;
   margin: 0;
   font-weight: bolder;
 }
 
-.car-details-table {
+.bike-details-table {
   width: 100%;
 }
 
-.car-details-table th,
-.car-details-table td {
+.bike-details-table th,
+.bike-details-table td {
   padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
-.car-details-table th {
+.bike-details-table th {
   text-align: left;
   font-weight: 300;
 }
 
-.car-details-owner {
+.bike-details-owner {
   margin: 0;
   margin-bottom: 0.5rem;
 }
 
-.car-details-owner-image {
+.bike-details-owner-image {
   width: 44px;
 }
 
-.car-details-phone {
+.bike-details-phone {
   position: relative;
   display: flex;
   align-items: center;
@@ -959,7 +959,7 @@ a.pagination-item:hover {
   font-weight: bold;
 }
 
-.car-details-phone-view {
+.bike-details-phone-view {
   position: absolute;
   right: 0;
   top: 0;
@@ -972,48 +972,48 @@ a.pagination-item:hover {
   transition: all 0.3s;
 }
 
-.car-details-phone-view:hover {
+.bike-details-phone-view:hover {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.car-details-title {
+.bike-details-title {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.car-detailed-description {
+.bike-detailed-description {
   padding: 1rem;
   margin: 1.5rem 0;
   font-size: 16px;
   line-height: 24px;
 }
 
-.car-specifications {
+.bike-specifications {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.car-specifications > li {
+.bike-specifications > li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.car-specifications > li > svg {
+.bike-specifications > li > svg {
   width: 18px;
 }
 
-.add-new-car-form .form-content {
+.add-new-bike-form .form-content {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
 }
 
-.add-new-car-form .form-details {
+.add-new-bike-form .form-details {
   flex: 1;
 }
 
@@ -1054,18 +1054,18 @@ a.pagination-item:hover {
   cursor: pointer;
 }
 
-.car-form-images {
+.bike-form-images {
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
   justify-content: start;
 }
 
-.car-form-image-preview {
+.bike-form-image-preview {
   position: relative;
 }
 
-.car-form-image-preview .delete-icon {
+.bike-form-image-preview .delete-icon {
   position: absolute;
   right: 0.125rem;
   top: 0.125rem;
@@ -1082,15 +1082,15 @@ a.pagination-item:hover {
   transition: all 0.3s;
 }
 
-.car-form-image-preview:hover .delete-icon {
+.bike-form-image-preview:hover .delete-icon {
   opacity: 1;
 }
 
-.car-form-image-preview .delete-icon:hover {
+.bike-form-image-preview .delete-icon:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.car-form-image-preview img {
+.bike-form-image-preview img {
   width: 80px;
   height: 80px;
   max-width: 100%;
@@ -1099,26 +1099,26 @@ a.pagination-item:hover {
   border-radius: 10px;
 }
 
-.page-my-cars .btn-edit,
-.page-my-cars .btn-delete {
+.page-my-bikes .btn-edit,
+.page-my-bikes .btn-delete {
   padding: 0.25rem 0.5rem;
   background-color: transparent;
 }
 
-.page-my-cars .btn-edit:hover,
-.page-my-cars .btn-delete:hover {
+.page-my-bikes .btn-edit:hover,
+.page-my-bikes .btn-delete:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.page-my-cars .btn-edit {
+.page-my-bikes .btn-edit {
   color: #448eef;
 }
 
-.page-my-cars .btn-delete {
+.page-my-bikes .btn-delete {
   color: #f16060;
 }
 
-.my-cars-img-thumbnail {
+.my-bikes-img-thumbnail {
   width: 60px;
   border-radius: 6px;
 }
@@ -1188,12 +1188,12 @@ a.pagination-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.search-car-results-wrapper {
+.search-bike-results-wrapper {
   display: flex;
   gap: 1rem;
 }
 
-.search-cars-sidebar {
+.search-bikes-sidebar {
   width: 300px;
 }
 
@@ -1203,23 +1203,23 @@ a.pagination-item:hover {
   }
 }
 
-.search-cars-sidebar .find-a-car-form {
+.search-bikes-sidebar .find-a-bike-form {
   flex-direction: column;
 }
 
-.search-cars-sidebar .find-a-car-inputs {
+.search-bikes-sidebar .find-a-bike-inputs {
   flex-direction: column;
 }
 
-.search-cars-sidebar .find-a-car-inputs > div {
+.search-bikes-sidebar .find-a-bike-inputs > div {
   width: 100%;
 }
 
-.search-cars-results {
+.search-bikes-results {
   flex: 1;
 }
 
-.search-cars-results .car-items-listing {
+.search-bikes-results .bike-items-listing {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1231,17 +1231,17 @@ a.pagination-item:hover {
 }
 
 @media screen and (max-width: 1200px) {
-  .car-items-listing {
+  .bike-items-listing {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .search-cars-results .car-items-listing {
+  .search-bikes-results .bike-items-listing {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media screen and (max-width: 992px) {
-  .car-items-listing {
+  .bike-items-listing {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1275,60 +1275,60 @@ a.pagination-item:hover {
     display: none;
   }
 
-  .car-details {
+  .bike-details {
     min-width: auto;
     width: 100%;
   }
 
-  .car-images-and-description {
+  .bike-images-and-description {
     min-width: auto;
   }
 
-  .car-images-carousel {
+  .bike-images-carousel {
     height: auto;
   }
 
-  .car-details-content {
+  .bike-details-content {
     flex-direction: column-reverse;
   }
 
-  .car-image-wrapper {
+  .bike-image-wrapper {
     justify-content: center;
   }
 
-  .car-image-thumbnails {
+  .bike-image-thumbnails {
     display: none;
   }
 
-  .add-new-car-form .form-details {
+  .add-new-bike-form .form-details {
     order: 2;
   }
 
-  .add-new-car-form .form-images {
+  .add-new-bike-form .form-images {
     border-left: none;
     order: 1;
   }
 
-  .add-new-car-form .form-content {
+  .add-new-bike-form .form-content {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .car-images-wrapper {
+  .bike-images-wrapper {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .car-images-wrapper .form-update-images{
+  .bike-images-wrapper .form-update-images{
     order: 2;
   }
 
-  .car-images-wrapper .form-images {
+  .bike-images-wrapper .form-images {
     width: 100%;
     order: 1;
   }
 
-  .add-new-car-form .form-content .form-images {
+  .add-new-bike-form .form-content .form-images {
     align-self: center;
   }
 
@@ -1340,11 +1340,11 @@ a.pagination-item:hover {
     display: flex;
   }
 
-  .search-cars-results .car-items-listing {
+  .search-bikes-results .bike-items-listing {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .search-cars-sidebar {
+  .search-bikes-sidebar {
     position: fixed;
     left: 0;
     top: 0;
@@ -1357,7 +1357,7 @@ a.pagination-item:hover {
     transform: translateX(-100%);
   }
 
-  .search-cars-sidebar.opened {
+  .search-bikes-sidebar.opened {
     transform: translateX(0);
   }
 }
@@ -1408,32 +1408,32 @@ a.pagination-item:hover {
     transform: translateX(-240px);
   }
 
-  .find-a-car-form {
+  .find-a-bike-form {
     flex-direction: column;
   }
 
-  /* .find-a-car-inputs > div {
+  /* .find-a-bike-inputs > div {
     width: 33%;
   } */
-  .car-items-listing {
+  .bike-items-listing {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .search-cars-results .car-items-listing {
+  .search-bikes-results .bike-items-listing {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media screen and (max-width: 480px) {
-  .find-a-car-inputs > div {
+  .find-a-bike-inputs > div {
     width: 100%;
   }
 
-  .car-items-listing {
+  .bike-items-listing {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
-  .search-cars-results .car-items-listing {
+  .search-bikes-results .bike-items-listing {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }

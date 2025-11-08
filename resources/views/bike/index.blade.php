@@ -2,8 +2,8 @@
     <main>
       <div>
         <div class="container">
-          <h1 class="bike-details-page-title">My Bikes</h1>
-          <div class="biked p-medium">
+          <h1 class="car-details-page-title">My Bikes</h1>
+          <div class="card p-medium">
             <div class="table-responsive">
               <table class="table">
                 <thead>

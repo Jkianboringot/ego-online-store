@@ -1,12 +1,12 @@
 <x-app-layout>
     <main>
       <div class="container-small">
-        <h1 class="car-details-page-title">Add new car</h1>
+        <h1 class="bike-details-page-title">Add new bike</h1>
         <form
           action=""
           method="POST"
           enctype="multipart/form-data"
-          class="card add-new-car-form"
+          class="card add-new-bike-form"
         >
           <div class="form-content">
             <div class="form-details">
@@ -149,7 +149,7 @@
                 </div>
                 <input id="carFormImageUpload" type="file" multiple />
               </div>
-              <div id="imagePreviews" class="car-form-images"></div>
+              <div id="imagePreviews" class="bike-form-images"></div>
             </div>
           </div>
           <div class="p-medium" style="width: 100%">

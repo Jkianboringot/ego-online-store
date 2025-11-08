@@ -1,19 +1,19 @@
 <x-app-layout>
   <main>
     <div class="container">
-      <h1 class="car-details-page-title">{{ $bike->maker->name }} {{ $bike->model->name }} - {{ $bike->year }}</h1>
+      <h1 class="bike-details-page-title">{{ $bike->maker->name }} {{ $bike->model->name }} - {{ $bike->year }}</h1>
 
-      <div class="car-details-content">
-        <div class="car-images-and-description">
-          <div class="car-images-carousel">
-            <div class="car-image-wrapper">
+      <div class="bike-details-content">
+        <div class="bike-images-and-description">
+          <div class="bike-images-carousel">
+            <div class="bike-image-wrapper">
               <img
                 src="{{ $bike->primaryImage }}"
                 alt=""
-                class="car-active-image"
+                class="bike-active-image"
                 id="activeImage" />
             </div>
-            <div class="car-image-thumbnails">
+            <div class="bike-image-thumbnails">
               @foreach ($bike->images as $image )
               <img src="{{ $image->image_path }}" alt="" />
 
@@ -50,8 +50,8 @@
             </button>
           </div>
 
-          <div class="card car-detailed-description">
-            <h2 class="car-details-title">Detailed Description</h2>
+          <div class="card bike-detailed-description">
+            <h2 class="bike-details-title">Detailed Description</h2>
             <p>
               {!! $bike->description !!}
             </p>
@@ -59,9 +59,9 @@
           </div>
 
         </div>
-        <div class="car-details card">
+        <div class="bike-details card">
           <div class="flex items-center justify-between">
-            <p class="car-details-price">
+            <p class="bike-details-price">
               <small>PISO</small>
               -{{ $bike->price }}
             </p>
@@ -82,7 +82,7 @@
           </div>
 
           <hr />
-          <table class="car-details-table">
+          <table class="bike-details-table">
             <tbody>
               <tr>
                 <th>Maker</th>
@@ -121,9 +121,9 @@
             <img
               src="/img/avatar.png"
               alt=""
-              class="car-details-owner-image" />
+              class="bike-details-owner-image" />
             <div>
-              <h3 class="car-details-owner">{{ $bike->user->name }}</h3>
+              <h3 class="bike-details-owner">{{ $bike->user->name }}</h3>
               <div class="text-muted">{{ $bike->user->bikes()->count() }} Bikes</div>
             </div>
           </div>
@@ -142,7 +142,7 @@
             </svg>
 
             {{ Str::mask($bike->phone,'*',-3) }}
-            <span class="car-details-phone-view">view full number</span>
+            <span class="bike-details-phone-view">view full number</span>
           </a>
         </div>
       </div>

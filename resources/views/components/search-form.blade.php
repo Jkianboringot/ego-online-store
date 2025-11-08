@@ -1,11 +1,11 @@
- <section class="find-a-car">
+ <section class="find-a-bike">
         <div class="container">
           <form
             action="{{ route('bike.search') }}"
             method="GET"
-            class="find-a-car-form card flex p-medium"
+            class="find-a-bike-form card flex p-medium"
           >
-            <div class="find-a-car-inputs">
+            <div class="find-a-bike-inputs">
               <div>
                 <select id="makerSelect" name="maker_id">
                   <option value="">Maker</option>
@@ -247,10 +247,10 @@
               </div>
             </div>
             <div>
-              <button type="button" class="btn btn-find-a-car-reset">
+              <button type="button" class="btn btn-find-a-bike-reset">
                 Reset
               </button>
-              <button class="btn btn-primary btn-find-a-car-submit">
+              <button class="btn btn-primary btn-find-a-bike-submit">
                 Search
               </button>
             </div>

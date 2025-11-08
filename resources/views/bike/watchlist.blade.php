@@ -15,7 +15,7 @@
           </div>
           @endif
         </div>
-        <div class="car-items-listing">
+        <div class="bike-items-listing">
           @forelse($bikes as $bike)
           <x-bike-item :$bike :favoured="true " />
 
