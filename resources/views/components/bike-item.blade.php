@@ -39,14 +39,14 @@
 
       </button>
     </div>
-    <h2 class="bike-item-title">{{ $bike->year }} - {{ $bike->maker->name }}
-      {{ $bike->model->name }}
+    <h2 class="bike-item-title">{{ $bike->year??'N/A' }} - {{ $bike->maker->name??'N/A' }}
+      {{ $bike->model->name??'N/A' }}
     </h2>
     <p class="bike-item-price">{{ $bike->price }}</p>
     <hr />
     <p class="m-0">
-      <span class="bike-item-badge">{{ $bike->bikeType->name }}</span>
-      <span class="bike-item-badge">{{ $bike->fuelType->name }}</span>
+      <span class="bike-item-badge">{{ $bike->bikeType->name??'N/A' }}</span>
+      <span class="bike-item-badge">{{ $bike->fuelType->name??'N/A' }}</span>
     </p>
   </div>
 </div>
