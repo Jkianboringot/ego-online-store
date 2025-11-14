@@ -22,7 +22,7 @@ class BikeController extends Controller
      */
     public function index()
     {
-        $bikes = User::find(2)->bikes()->with(['maker', 'model', 'primaryImage'])
+        $bikes = User::find(auth()->id())->bikes()->with(['maker', 'model', 'primaryImage'])
 
             ->orderBy('created_at', 'desc')->paginate(5);
 
@@ -36,7 +36,7 @@ class BikeController extends Controller
         $models = Model::all();
         $fuel_types = FuelType::all();
 
-        
+
         return view('bike.create', [
             'bike_types' => $bike_types,
             'fuel_types' => $fuel_types,
@@ -49,7 +49,7 @@ class BikeController extends Controller
     {
         $validated = $request->validate([
             'year' => 'nullable',
-            'price'=>'required',
+            'price' => 'required',
             'address' => 'nullable',
             'description' => 'nullable',
             'phone' => 'nullable',
@@ -58,13 +58,18 @@ class BikeController extends Controller
             'fuel_type_id' => 'nullable',
             'user_id' => 'nullable',
             'bike_type_id' => 'required',
-            'published'=>'nullable'
+            'published_at' => 'nullable'
 
         ]);
-        $validated['user_id']=auth()->id();
+        $validated['user_id'] = auth()->id();
+
+        if (isset($validated['published_at'])) {
+        $validated['published_at'] = now();
+
+        }
         Bike::create($validated);
 
-    return redirect()->route('bike.index')->with('success', 'Bike created successfully.');
+        return redirect()->route('bike.index')->with('success', 'Bike created successfully.');
     }
 
     public function show(Bike $bike)

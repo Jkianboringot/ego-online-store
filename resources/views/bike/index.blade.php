@@ -21,15 +21,15 @@
                   <tr>
                     <td>
                       <img
-                        src="{{ $bike->primaryImage->image_path }}"
-                        alt=""
+                        src="{{ $bike->primaryImage->image_path??'' }}"
+                        alt="logoipsum-265.svg"
                         class="my-bikes-img-thumbnail"
                       />
                     </td>
                     <td>{{ $bike->year }} - {{ $bike->maker->name }} {{ $bike->model->name }}</td>
                     <td>{{ $bike->created_at->format('M d, Y') }}</td>
                     <td>{{ $bike->published_at ? 'Yes':'NO' }}</td>
-                    <td class="text-center">
+                    <td>
                       <a
                       href="{{ route('bike.edit',$bike) }}"
                         class="btn btn-edit inline-flex items-center"
@@ -51,26 +51,7 @@
 
                         edit
                       </a>
-                      <a
-                        href="bike_images.html"
-                        class="btn btn-edit inline-flex items-center"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          style="width: 12px; margin-right: 5px"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                          />
-                        </svg>
-                        images
-                      </a>
+                    
                       <button class="btn btn-delete inline-flex items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

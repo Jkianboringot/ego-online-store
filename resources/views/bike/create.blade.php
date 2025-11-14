@@ -70,7 +70,7 @@
             <div class="col">
               <div class="form-group">
                 <label><strong>Price</strong></label>
-                <input type="number" placeholder="Price" name="price"/>
+                <input type="number" placeholder="Price" name="price" min='1'/>
               </div>
             </div>
             <div class="col"> 
@@ -113,7 +113,7 @@
           </div>
           <div class="form-group">
             <label class="checkbox">
-              <input type="checkbox" name="published" />
+              <input type="checkbox" name="published_at" />
               Published
             </label>
           </div>
