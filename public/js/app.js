@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const initImagePicker = () => {
-    const fileInput = document.querySelector("#carFormImageUpload");
+    const fileInput = document.querySelector("#bikeFormImageUpload");
     const imagePreview = document.querySelector("#imagePreviews");
     if (!fileInput) {
       return;

@@ -16,7 +16,7 @@ class BikeSeeder extends Seeder
         'year' => 2020,
         'price' => 20000,
         
-        'vin' => 'VIN001',
+        
         'address' => '123 Main St',
         'phone' => '1111111111',
         'description' => 'Toyota Corolla',
@@ -35,7 +35,7 @@ class BikeSeeder extends Seeder
         'year' => 2021,
         'price' => 25000,
         
-        'vin' => 'VIN002',
+        
         'address' => '456 Oak St',
         'phone' => '2222222222',
         'description' => 'Toyota Camry',
@@ -54,7 +54,7 @@ class BikeSeeder extends Seeder
         'year' => 2019,
         'price' => 18000,
         
-        'vin' => 'VIN003',
+        
         'address' => '789 Pine St',
         'phone' => '3333333333',
         'description' => 'Honda Civic',
@@ -72,7 +72,7 @@ class BikeSeeder extends Seeder
         'id' => 4,
         'year' => 2022,
         'price' => 30000,
-                'vin' => 'VIN004',
+                
         'address' => '101 Maple St',
         'phone' => '4444444444',
         'description' => 'Honda Accord',
@@ -91,7 +91,7 @@ class BikeSeeder extends Seeder
         'year' => 2018,
         'price' => 15000,
         
-        'vin' => 'VIN005',
+        
         'address' => '202 Cedar St',
         'phone' => '5555555555',
         'description' => 'Old Corolla',
@@ -109,7 +109,7 @@ class BikeSeeder extends Seeder
         'id' => 6,
         'year' => 2023,
         'price' => 32000,
-                'vin' => 'VIN006',
+                
         'address' => '303 Birch St',
         'phone' => '6666666666',
         'description' => 'Nissan Altima',
@@ -128,7 +128,7 @@ class BikeSeeder extends Seeder
         'year' => 2020,
         'price' => 21000,
         
-        'vin' => 'VIN007',
+        
         'address' => '404 Elm St',
         'phone' => '7777777777',
         'description' => 'Mazda 3',
@@ -147,7 +147,7 @@ class BikeSeeder extends Seeder
         'year' => 2017,
         'price' => 14000,
         
-        'vin' => 'VIN008',
+        
         'address' => '505 Spruce St',
         'phone' => '8888888888',
         'description' => 'Hyundai Elantra',
@@ -165,7 +165,7 @@ class BikeSeeder extends Seeder
         'id' => 9,
         'year' => 2016,
         'price' => 13000,
-        'vin' => 'VIN009',
+        
         'address' => '606 Willow St',
         'phone' => '9999999999',
         'description' => 'Ford Focus',

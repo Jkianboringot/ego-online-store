@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
-            $table->integer('year');
+            $table->integer('year')->nullable();
             $table->integer('price');
-            $table->string('address');
-            $table->string('phone',45);
+            $table->string('address')->nullable();
+            $table->string('phone',45)->nullable();
             $table->longtext('description')->nullable();
-            $table->foreignId('maker_id')->constrained();
-            $table->foreignId('model_id')->constrained();
+            $table->foreignId('maker_id')->nullable()->constrained();
+            $table->foreignId('model_id')->nullable()->constrained();
             $table->foreignId('bike_type_id')->constrained();
-            $table->foreignId('fuel_type_id')->constrained();
+            $table->foreignId('fuel_type_id')->nullable()->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamp('published_at')->nullable();
                 $table->softDeletes(); // adds nullable deleted_at column
