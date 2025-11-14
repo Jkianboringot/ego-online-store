@@ -11,41 +11,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/', [AuthenticatedSessionController::class, 'create'])
-//     ->name('login');
-
-
 Route::get(
     '/',
     [HomeController::class, 'index']
 )->name('index'); //->middleware('auth')
 
 
-Route::get(
-    '/',
-    [HomeController::class, 'index']
-)->middleware(['auth', 'verified'])->name('index');
+Route::prefix('bike')->middleware('auth')->name('bike.')->group(function () {
+    Route::get('/search', [BikeController::class, 'search'])->name('search');
+    Route::get('/watchlist', [BikeController::class, 'watchlist'])->name('watchlist');
 
-Route::get('/bike/search', [BikeController::class, 'search'])->name('bike.search');
-Route::get('/bike/watchlist', [BikeController::class, 'watchlist'])->name('bike.watchlist');
-Route::get('/bike/edit', [BikeController::class, 'edit'])->name('bike.edit');
-
-Route::Post('/store',[BikeController::class,'store'])->name('bike.store');
-
-Route::resource('bike', BikeController::class);
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Route::resource('/', BikeController::class)->parameters(['' => 'bike']);
+});
 
 
 
@@ -64,11 +41,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 
-    // Route::get('/', [HomeController::class,'index']
-    // )->name('index');//->middleware('auth')
-
-    // Route::resource('bike',BikeController::class);
-
-
-    // Route::get('/signup', [SignupController::class,'create']
-    // )->name('signup');
+    
