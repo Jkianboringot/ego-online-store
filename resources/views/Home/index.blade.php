@@ -25,7 +25,8 @@
             </div>
           </div>
           <div class="slide-image">
-            <img src="/img/images (10).jpeg" alt="" class="img-responsive" />
+            <img src="/img/motorcycle-png-20323-removebg-preview.png" alt="" class="img-responsive"
+              />
           </div>
         </div>
       </div>
@@ -47,7 +48,7 @@
             </div>
           </div>
           <div class="slide-image">
-            <img src="/img/images (10).jpeg" alt="" class="img-responsive" />
+            <img src="/img/motorcycle-png-20323-removebg-preview.png" alt="" class="img-responsive" />
           </div>
         </div>
       </div>
@@ -93,7 +94,7 @@
       <div class="container">
         <h2>Latest Added Bikes</h2>
         <div class="bike-items-listing">
-         
+
 
           @foreach($bikes as $bike)
           <x-bike-item :bike='$bike' />

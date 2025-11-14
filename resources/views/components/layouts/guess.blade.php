@@ -22,7 +22,7 @@
               </div>
           </div>
           <div class="auth-page-image">
-            <img src="images (10).jpeg" alt="" class="img-responsive" />
+            <img src="images (6).png" alt="" class="img-responsive" />
           </div>
         </div>
       </div>
