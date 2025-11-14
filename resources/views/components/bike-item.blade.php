@@ -3,8 +3,9 @@
   <a href="{{route('bike.show',$bike)}}">
     <img
       src="{{ $bike->primaryImage->image_path }}"
-      alt=""
+      alt="nsdndn"
       class="bike-item-img rounded-t" />
+      //fix this tommorow
   </a>
   <div class="p-medium">
     <div class="flex items-center justify-between">

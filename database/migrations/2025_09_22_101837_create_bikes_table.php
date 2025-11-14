@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longtext('description')->nullable();
             $table->foreignId('maker_id')->nullable()->constrained();
             $table->foreignId('model_id')->nullable()->constrained();
-            $table->foreignId('bike_type_id')->constrained();
+            $table->foreignId('bike_type_id')->nullable()->constrained();
             $table->foreignId('fuel_type_id')->nullable()->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamp('published_at')->nullable();

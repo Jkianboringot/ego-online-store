@@ -1,23 +1,25 @@
 <x-app-layout>
   <main>
+    
     <div class="container-small">
       <h1 class="bike-details-page-title">Add new bike</h1>
       <form
-        action=""
+        action="{{ route('bike.store') }}"
         method="POST"
         enctype="multipart/form-data"
         class="card add-new-bike-form">
+        @csrf
         <div class="form-content">
           <div class="form-details">
             <div class="row">
               <div class="col">
                 <div class="form-group">
                   <label><strong>Maker</strong></label>
-                  <select>
+                  <select name='maker_id'>
 
                     @foreach ($makers as $maker)
 
-                    <option value="{{ $maker->id }}">{{ $maker->name }}</option>
+                    <option value="{{ $maker->id }}" >{{ $maker->name }}</option>
                     @endforeach
 
                   </select>
@@ -27,7 +29,7 @@
             <div class="col">
               <div class="form-group">
                 <label><Strong>Model</Strong></label>
-                <select>
+                <select  name='model_id'>
 
                   @foreach ($models as $model)
 
@@ -40,7 +42,7 @@
             <div class="col">
               <div class="form-group">
                 <label><strong>Year</strong></label>
-                <select>
+                <select name='year'>
                   <option value="">Year</option>
                   <option value="2024">2024</option>
                 </select>
@@ -55,7 +57,7 @@
 
               <div class="col">
                 <label class="inline-radio">
-                  <input type="radio" name="bike_type" value="{{$bike_type->id}}" />
+                  <input type="radio" name="bike_type_id" value="{{$bike_type->id}}" />
                   <p>{{$bike_type->type}}</p>
                 </label>
               </div>
@@ -68,10 +70,10 @@
             <div class="col">
               <div class="form-group">
                 <label><strong>Price</strong></label>
-                <input type="number" placeholder="Price" />
+                <input type="number" placeholder="Price" name="price"/>
               </div>
             </div>
-            <div class="col">
+            <div class="col"> 
               <div class="form-group">
                 <label>Phone</label>
                 <input placeholder="Phone" name="phone" />
@@ -87,7 +89,7 @@
 
               <div class="col">
                 <label class="inline-radio">
-                  <input type="radio" name="fuel_type" value="{{$fuel_type->id}}" />
+                  <input type="radio" name="fuel_type_id" value="{{$fuel_type->id}}" />
                   <p>{{$fuel_type->name}}</p>
 
                 </label>

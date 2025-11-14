@@ -17,12 +17,15 @@ Route::get(
 )->name('index'); //->middleware('auth')
 
 
-Route::prefix('bike')->middleware('auth')->name('bike.')->group(function () {
-    Route::get('/search', [BikeController::class, 'search'])->name('search');
-    Route::get('/watchlist', [BikeController::class, 'watchlist'])->name('watchlist');
+Route::middleware('auth')->group(function () {
+    Route::get('bike/search', [BikeController::class, 'search'])->name('bike.search');
+    Route::get('bike/watchlist', [BikeController::class, 'watchlist'])->name('bike.watchlist');
 
-    Route::resource('/', BikeController::class)->parameters(['' => 'bike']);
+    Route::resource('bike', BikeController::class);
 });
+
+
+
 
 
 
@@ -39,6 +42,3 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__ . '/auth.php';
-
-
-    

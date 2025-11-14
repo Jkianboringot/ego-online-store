@@ -31,16 +31,15 @@ class BikeController extends Controller
 
     public function create()
     {
-        $bikes = Bike::all();
         $bike_types = BikeType::all();
         $makers = Maker::all();
         $models = Model::all();
         $fuel_types = FuelType::all();
 
+        
         return view('bike.create', [
             'bike_types' => $bike_types,
             'fuel_types' => $fuel_types,
-            'bikes' => $bikes,
             'makers' => $makers,
             'models' => $models,
         ]);
@@ -50,6 +49,7 @@ class BikeController extends Controller
     {
         $validated = $request->validate([
             'year' => 'nullable',
+            'price'=>'required',
             'address' => 'nullable',
             'description' => 'nullable',
             'phone' => 'nullable',
@@ -57,12 +57,14 @@ class BikeController extends Controller
             'model_id' => 'nullable',
             'fuel_type_id' => 'nullable',
             'user_id' => 'nullable',
-            'bike_type_id' => 'nullable',
+            'bike_type_id' => 'required',
+            'published'=>'nullable'
 
         ]);
+        $validated['user_id']=auth()->id();
         Bike::create($validated);
 
-        return to_route('index')->with('success', 'Bike Create');
+    return redirect()->route('bike.index')->with('success', 'Bike created successfully.');
     }
 
     public function show(Bike $bike)
