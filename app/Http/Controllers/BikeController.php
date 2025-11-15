@@ -64,8 +64,7 @@ class BikeController extends Controller
         $validated['user_id'] = auth()->id();
 
         if (isset($validated['published_at'])) {
-        $validated['published_at'] = now();
-
+            $validated['published_at'] = now();
         }
         Bike::create($validated);
 
@@ -82,7 +81,18 @@ class BikeController extends Controller
      */
     public function edit(Bike $bike)
     {
-        return view('bike.edit');
+        $bike_types = BikeType::all();
+        $makers = Maker::all();
+        $models = Model::all();
+        $fuel_types = FuelType::all();
+
+        return view('bike.edit', [
+            'bike' => $bike,
+            'bike_types' => $bike_types,
+            'fuel_types' => $fuel_types,
+            'makers' => $makers,
+            'models' => $models,
+        ]);
     }
 
     /**
@@ -90,7 +100,42 @@ class BikeController extends Controller
      */
     public function update(Request $request, Bike $bike)
     {
-        //
+        $validated = $request->validate([
+            'year' => 'nullable',
+            'price' => 'required',
+            'address' => 'nullable',
+            'description' => 'nullable',
+            'phone' => 'nullable',
+            'maker_id' => 'nullable',
+            'model_id' => 'nullable',
+            'fuel_type_id' => 'nullable',
+            'user_id' => 'nullable',
+            'bike_type_id' => 'required',
+            'published_at' => 'nullable'
+
+        ]);
+        $validated['user_id'] = auth()->id();
+
+        if (isset($validated['published_at'])) {
+            $validated['published_at'] = now();
+        }
+        Bike::where('id', $bike->id)->update(
+            [
+                'year' =>$validated['year'],
+                'price' => $validated['price'],
+                'address' =>$validated['address'],
+                'description' =>$validated['description'],
+                'phone' =>$validated['phone'],
+                'maker_id' =>$validated['maker_id'],
+                'model_id' =>$validated['model_id'],
+                'fuel_type_id' =>$validated['fuel_type_id'],
+                'bike_type_id' => $validated['bike_type_id'],
+                'published_at' =>$validated['published_at']
+
+            ]
+        );
+
+        return redirect()->route('bike.index')->with('success', 'Bike created successfully.');
     }
 
     /**
@@ -98,7 +143,8 @@ class BikeController extends Controller
      */
     public function destroy(Bike $bike)
     {
-        //
+        $bike->delete();
+        return redirect()->route('bike.index')->with('success', 'Bike Successfully Deleted');
     }
     public function search()
     {

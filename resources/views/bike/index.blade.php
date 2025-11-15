@@ -51,8 +51,10 @@
 
                         edit
                       </a>
-                    
-                      <button class="btn btn-delete inline-flex items-center">
+                    <form action="{{ route("bike.destroy",$bike->id) }}" method="POST">
+                      @csrf
+                      @method("DELETE")
+                      <button class="btn btn-delete inline-flex items-center" type="submit">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -70,12 +72,13 @@
 
                         delete
                       </button>
+                      </form>
                     </td>
                   </tr>
                   @empty
                   <tr>
                     <td class="text-center p-large" colspan="5">
-                      You don't have Bikes yet. <a href="{{ route('bike.create') }}">Add new Bike</a>
+                     You don't have Bikes yet. <a href="{{ route('bike.create') }}"  style="color:blue">Add new Bike</a>
                     </td>
                   </tr>
                   @endforelse

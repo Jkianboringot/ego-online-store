@@ -57,10 +57,10 @@
           </a>
           <ul class="submenu">
             <li>
-              <a href="my_cars.html">My Cars</a>
+              <a href="{{ route('bike.index') }}">My Bikes</a>
             </li>
             <li>
-              <a href="watchlist.html">My Favourite Cars</a>
+              <a href="{{ route('bike.watchlist') }}">My Favourite Bikes</a>
             </li>
             <li>
               <form action="{{ route('logout') }}" method="post">
