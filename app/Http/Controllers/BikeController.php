@@ -130,7 +130,7 @@ class BikeController extends Controller
                 'model_id' =>$validated['model_id'],
                 'fuel_type_id' =>$validated['fuel_type_id'],
                 'bike_type_id' => $validated['bike_type_id'],
-                'published_at' =>$validated['published_at']
+                'published_at' =>$validated['published_at']??null
 
             ]
         );
