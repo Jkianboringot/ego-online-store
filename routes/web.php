@@ -8,12 +8,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use  App\Livewire\Bike;
+use  App\Livewire\HomePage;
+
 
 
 
 Route::get(
     '/',
-    [HomeController::class, 'index']
+    HomePage::class
 )->name('index'); //->middleware('auth')
 
 

@@ -17,12 +17,6 @@ Route::middleware('guest')->group(function () {
         ->name('register');
 
 
-    Route::get(
-        'index',
-        [HomeController::class, 'index']
-    )->name('index'); //->middleware('auth')
-    //find ohter way to access this through web not auth
-
     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
