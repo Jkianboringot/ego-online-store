@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use  App\Livewire\Bike;
 
 
 
@@ -25,6 +25,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::prefix('bikes')->middleware('auth')->name('bikes.')->group(function(){
+    Route::get('/',[Bike\Index::class])->name('index');
+    Route::get('/create',[Bike\Create::class])->name('create');
+    Route::get('/edit',[Bike\Edit::class])->name('edit');
+});
 
 
 
