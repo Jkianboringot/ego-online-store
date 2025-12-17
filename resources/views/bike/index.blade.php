@@ -2,7 +2,14 @@
     <main>
       <div>
         <div class="container">
-          <h1 class="car-details-page-title">My Bikes</h1>
+          <div class="row">
+            <div class="col-6">          <h1 class="car-details-page-title">My Bikes</h1></div>
+          <div class="col-6">
+          <a href="{{ route('index') }}" style="align-content: end;" class="bg bg-primary"> 
+            <button type="submit"  class="btn btn-hero-slider">Go to Home</button>
+          </a>
+          </div>
+          </div>
           <div class="card p-medium">
             <div class="table-responsive">
               <table class="table">
