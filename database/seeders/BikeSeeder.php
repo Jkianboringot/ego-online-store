@@ -19,7 +19,7 @@ class BikeSeeder extends Seeder
         
         'address' => '123 Main St',
         'phone' => '1111111111',
-        'description' => 'Toyota Corolla',
+        'description' => 'big bike',
         'maker_id' => 1,
         'model_id' => 1,
         'bike_type_id' => 1,
@@ -38,7 +38,7 @@ class BikeSeeder extends Seeder
         
         'address' => '456 Oak St',
         'phone' => '2222222222',
-        'description' => 'Toyota Camry',
+        'description' => 'big bike',
         'maker_id' => 1,
         'model_id' => 2,
         'bike_type_id' => 1,
@@ -57,7 +57,7 @@ class BikeSeeder extends Seeder
         
         'address' => '789 Pine St',
         'phone' => '3333333333',
-        'description' => 'Honda Civic',
+        'description' => 'big bike',
         'maker_id' => 2,
         'model_id' => 3,
         'bike_type_id' => 2,
@@ -75,7 +75,7 @@ class BikeSeeder extends Seeder
                 
         'address' => '101 Maple St',
         'phone' => '4444444444',
-        'description' => 'Honda Accord',
+        'description' => 'big bike',
         'maker_id' => 2,
         'model_id' => 4,
         'bike_type_id' => 2,
@@ -94,7 +94,7 @@ class BikeSeeder extends Seeder
         
         'address' => '202 Cedar St',
         'phone' => '5555555555',
-        'description' => 'Old Corolla',
+        'description' => 'big bike',
         'maker_id' => 1,
         'model_id' => 1,
         'bike_type_id' => 1,
@@ -112,7 +112,7 @@ class BikeSeeder extends Seeder
                 
         'address' => '303 Birch St',
         'phone' => '6666666666',
-        'description' => 'Nissan Altima',
+        'description' => 'big bikeke',
         'maker_id' => 3,
         'model_id' => 5,
         'bike_type_id' => 3,
@@ -131,7 +131,7 @@ class BikeSeeder extends Seeder
         
         'address' => '404 Elm St',
         'phone' => '7777777777',
-        'description' => 'Mazda 3',
+        'description' => 'big bike',
         'maker_id' => 4,
         'model_id' => 1,
         'bike_type_id' => 2,
@@ -150,7 +150,7 @@ class BikeSeeder extends Seeder
         
         'address' => '505 Spruce St',
         'phone' => '8888888888',
-        'description' => 'Hyundai Elantra',
+        'description' => 'big bike',
         'maker_id' => 5,
         'model_id' => 2,
         'bike_type_id' => 1,
@@ -168,7 +168,7 @@ class BikeSeeder extends Seeder
         
         'address' => '606 Willow St',
         'phone' => '9999999999',
-        'description' => 'Ford Focus',
+        'description' => 'big bike',
         'maker_id' => 3,
         'model_id' => 3,
         'bike_type_id' => 2,
